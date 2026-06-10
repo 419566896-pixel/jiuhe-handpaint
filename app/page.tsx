@@ -1,26 +1,24 @@
-import Image from "next/image";
 import ContactForm from "./components/ContactForm";
 import GalleryCarousel from "./components/GalleryCarousel";
 import HeroCarousel from "./components/HeroCarousel";
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-900">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-black text-white overflow-hidden">
+      <section className="relative h-[50vh] flex items-start justify-center bg-black text-white overflow-hidden pt-[4cm]">
         {/* 轮播背景 */}
         <HeroCarousel />
         {/* 渐变遮罩 */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60 z-10" />
-        <div className="relative z-20 text-center px-8 w-full" style={{ marginTop: '-13cm' }}>
+        <div className="relative z-20 text-center px-8 w-full">
           <h1 className="font-black mb-8 leading-tight tracking-wider whitespace-nowrap" style={{ fontSize: 'clamp(4rem, 14vw, 16rem)' }}>
-            久合手绘喷绘工艺
+            广州久合手绘厂
           </h1>
           <p className="text-5xl md:text-6xl mb-6 text-gray-300 font-medium">
             手绘的温度，让每件单品都独一无二 · 服装鞋包品牌商都在找的手绘厂
           </p>
           <p className="text-3xl mb-10 text-gray-400">
-            20年画师团队 | 3天打样 | 全国发货 | 服务批发/品牌/电商5000+客户
+            20年画师团队 | 全国发货 | 服务批发/品牌/电商5000+客户
           </p>
           <div className="flex gap-6 justify-center flex-wrap">
             <a
@@ -38,26 +36,43 @@ export default function Home() {
           </div>
         </div>
 
-        {/* 预约打样 — 叠加在首屏左下角 */}
-        <div className="absolute bottom-8 left-8 z-30 w-[60rem] bg-gray-900/90 backdrop-blur-sm border border-gray-700 rounded-2xl p-10">
-          <h3 className="text-3xl font-bold text-white mb-3">预约打样</h3>
-          <p className="text-gray-400 text-lg mb-6">48小时内回复，3天出样品</p>
-          <ContactForm />
-          <div className="mt-6 pt-6 border-t border-gray-700 text-lg">
-            <p className="text-gray-400">手机/微信：<span className="text-white font-semibold">13168873754</span></p>
+        {/* 联系方式 — 左下角 */}
+        <div className="absolute bottom-4 left-4 z-30">
+          <div className="bg-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl px-10 py-5">
+            <p className="text-yellow-400 text-3xl md:text-4xl font-bold">
+              📞 13168873754
+              &nbsp;&nbsp;|&nbsp;&nbsp;
+              📍 广州市白云区大冈村大园街12号
+            </p>
           </div>
         </div>
 
-        {/* 联系方式 — 叠加在首屏右下角 */}
-        <div className="fixed bottom-8 right-8 z-50 bg-gray-900/90 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
-          <p className="text-yellow-400 text-4xl font-bold">
-            📞 13168873754
-            &nbsp;&nbsp;|&nbsp;&nbsp;
-            📍 白云区石井大冈村大园街12号
-            &nbsp;&nbsp;|&nbsp;&nbsp;
-            ⏰ 周一至周六 9:00-18:00
-          </p>
+        {/* 微信二维码 — 右下角偏左 */}
+        <div className="absolute bottom-4 right-24 z-30">
+          <div className="bg-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-4 text-center">
+            <div className="w-52 h-52 bg-gray-700 rounded-lg flex items-center justify-center mb-2">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/wechat-qr.png" alt="微信二维码" className="w-full h-full object-contain rounded-lg" />
+            </div>
+            <p className="text-yellow-400 text-lg font-bold">扫码加微信</p>
+            <p className="text-gray-400 text-sm">13168873754</p>
+          </div>
         </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section id="gallery" className="py-20 bg-black border-t border-gray-800">
+        <div className="px-8 mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">看看我们画过什么</h2>
+          <p className="text-center text-gray-400 mb-12">每一件都是画师手工创作，拒绝机器印花的千篇一律</p>
+        </div>
+
+        {/* Carousel - full width */}
+        <GalleryCarousel />
+
+        <p className="text-center text-gray-400 mt-8 px-4">
+          以上仅展示部分案例，更多作品请添加微信查看完整作品集
+        </p>
       </section>
 
       {/* Trust Section */}
@@ -143,21 +158,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section id="gallery" className="py-20 bg-black border-t border-gray-800">
-        <div className="px-8 mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">看看我们画过什么</h2>
-          <p className="text-center text-gray-400 mb-12">每一件都是画师手工创作，拒绝机器印花的千篇一律</p>
-        </div>
-
-        {/* Carousel - full width */}
-        <GalleryCarousel />
-
-        <p className="text-center text-gray-400 mt-8 px-4">
-          以上仅展示部分案例，更多作品请添加微信查看完整作品集
-        </p>
-      </section>
-
       {/* Services Section */}
       <section id="services" className="py-20 bg-gray-900 border-t border-gray-800">
         <div className="px-8">
@@ -206,13 +206,13 @@ export default function Home() {
       </section>
 
       {/* Why Us Section */}
-      <section className="py-20 bg-black border-t border-gray-800">
+      <section id="why-us" className="py-20 bg-black border-t border-gray-800">
         <div className="px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">四大理由让全国商家都选我们</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 ">
             {[
               { icon: '🎨', title: '手绘的温度', desc: '拒绝机器印花的冰冷感，每件都有画师的笔触和情感，图案生动灵活，细节丰富有层次' },
-              { icon: '⚡', title: '交期靠谱', desc: '打样3天出货，批量7-15天，急单可加急处理，配合你的上新节奏，20年老厂从不拖延' },
+              { icon: '⚡', title: '交期靠谱', desc: '急单可加急处理，配合你的上新节奏，20年老厂从不拖延' },
               { icon: '🎯', title: '灵活接单', desc: '测款无压力，大批量价格更优，质量稳定，可大可小，可快可慢' },
               { icon: '🏆', title: '技术过硬', desc: '画师团队20年经验，什么风格都能画，国风、潮流、卡通、油画...你要的我们都擅长' }
             ].map((item) => (
@@ -227,14 +227,14 @@ export default function Home() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-gray-900 border-t border-gray-800">
+      <section id="process" className="py-20 bg-gray-900 border-t border-gray-800">
         <div className="px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">四步搞定，简单高效</h2>
           <p className="text-center text-gray-400 mb-16">从咨询到收货，全程跟进</p>
           <div className="space-y-8 ">
             {[
               { num: '01', title: '沟通需求', desc: '加微信发图片，告诉我们：要画在什么上、想要什么风格、数量和交期要求。没有设计稿？我们可以帮你原创设计' },
-              { num: '02', title: '报价打样', desc: '根据复杂度和数量报价，满意后3天内完成样品。看到实物再决定是否批量生产' },
+              { num: '02', title: '报价打样', desc: '根据复杂度和数量报价，满意后完成样品。看到实物再决定是否批量生产' },
               { num: '03', title: '确认生产', desc: '样品满意后签订合同，支付定金开始批量生产，过程中可随时跟进进度' },
               { num: '04', title: '验货交付', desc: '逐件质检，确保每件符合标准，支持自提或发货，有问题7天内可返工' }
             ].map((step) => (
@@ -253,7 +253,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-black border-t border-gray-800">
+      <section id="testimonials" className="py-20 bg-black border-t border-gray-800">
         <div className="px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-white">合作客户这样说</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 ">
@@ -261,10 +261,10 @@ export default function Home() {
               { quote: '合作5年了，画工没得说，每次都按时交货，价格也公道', name: '李老板', from: '红棉女装批发档口' },
               { quote: '小批量也接单，很适合我们电商测款，爆了再加单', name: '陈小姐', from: '淘宝店主' },
               { quote: '手绘的质感真的比印花好太多，客户都说有艺术感', name: '王设计师', from: '独立设计师品牌' },
-              { quote: '画师技术很好，什么风格都能画，而且每件都有细微差异，不会千篇一律', name: '张总', from: '十三行服装品牌商' }
+              { quote: '画师技术很好，什么风格都能画，而且每件都有细微差异，不会千篇一律。', name: '张总', from: '十三行服装品牌商' }
             ].map((t) => (
               <div key={t.name} className="p-6 bg-gray-800 border border-gray-700 rounded-2xl hover:border-yellow-600 transition">
-                <p className="text-gray-300 mb-6 leading-relaxed">"{t.quote}"</p>
+                <p className="text-gray-300 mb-6 leading-relaxed">{`“${t.quote}”`}</p>
                 <div>
                   <p className="font-semibold text-white">{t.name}</p>
                   <p className="text-sm text-gray-500">{t.from}</p>
@@ -275,9 +275,21 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 预约打样 */}
+      <section id="contact" className="py-20 bg-gray-900 border-t border-gray-800">
+        <div className="px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">预约打样</h2>
+          <p className="text-center text-gray-400 mb-12">48小时内回复</p>
+          <ContactForm />
+          <div className="mt-8 pt-8 border-t border-gray-700 text-center">
+            <p className="text-gray-400 text-lg">手机/微信：<span className="text-white font-semibold">13168873754</span></p>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-8 bg-black text-gray-500 text-sm text-center">
-        <p>© 2024 久合手绘喷绘厂 版权所有 | 广州市白云区石井大冈村大园街12号</p>
+        <p>© 2026 久合手绘喷绘厂 版权所有 | 广州市白云区大冈村大园街12号</p>
         <p className="mt-2">专注服装/鞋履/箱包手绘定制 · 全国发货 · 20年品质保障</p>
       </footer>
     </div>
