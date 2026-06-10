@@ -62,13 +62,13 @@ export default function Home() {
 
       {/* Trust Section */}
       <section className="py-20 bg-gray-900 border-t border-gray-800">
-        <div className="px-4">
+        <div className="px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">
             服务全国线上线下商家 · 20年口碑见证
           </h2>
 
           {/* 客户类型 */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 text-center max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 text-center">
             {[
               '服装批发/档口商家',
               '鞋履品牌/工厂',
@@ -88,7 +88,7 @@ export default function Home() {
 
           {/* 手绘品类细分 */}
           <h3 className="text-2xl font-bold text-center mt-16 mb-8 text-yellow-500">手绘品类全覆盖</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 ">
             {[
               'T恤手绘', '卫衣手绘', '牛仔外套', '裤子手绘', '衬衫手绘', '连衣裙',
               '男装手绘', '女装手绘', '童装手绘', '汉服手绘', '旗袍手绘', '民族服饰',
@@ -104,7 +104,7 @@ export default function Home() {
 
           {/* 全国批发市场覆盖 */}
           <h3 className="text-2xl font-bold text-center mt-16 mb-8 text-yellow-500">覆盖全国批发市场商圈</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
             {[
               { city: '广州', markets: '十三行 · 白马 · 红棉 · 沙河 · 中大布料 · 站西金宝 · 国际轻纺城' },
               { city: '佛山', markets: '童装城 · 张槎针织 · 南海盐步内衣' },
@@ -127,7 +127,7 @@ export default function Home() {
           </div>
 
           {/* 数据 */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 text-center max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 text-center ">
             {[
               { num: '20+', label: '年手绘经验' },
               { num: '5000+', label: '合作客户' },
@@ -145,7 +145,7 @@ export default function Home() {
 
       {/* Gallery Section */}
       <section id="gallery" className="py-20 bg-black border-t border-gray-800">
-        <div className="px-4 mb-8">
+        <div className="px-8 mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">看看我们画过什么</h2>
           <p className="text-center text-gray-400 mb-12">每一件都是画师手工创作，拒绝机器印花的千篇一律</p>
         </div>
@@ -160,11 +160,11 @@ export default function Home() {
 
       {/* Services Section */}
       <section id="services" className="py-20 bg-gray-900 border-t border-gray-800">
-        <div className="px-4">
+        <div className="px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">三大品类全覆盖</h2>
           <p className="text-center text-gray-400 mb-16">你的创意我们来实现</p>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 ">
             {[
               {
                 title: '服装手绘',
@@ -207,9 +207,9 @@ export default function Home() {
 
       {/* Why Us Section */}
       <section className="py-20 bg-black border-t border-gray-800">
-        <div className="px-4">
+        <div className="px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">四大理由让全国商家都选我们</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 ">
             {[
               { icon: '🎨', title: '手绘的温度', desc: '拒绝机器印花的冰冷感，每件都有画师的笔触和情感，图案生动灵活，细节丰富有层次' },
               { icon: '⚡', title: '交期靠谱', desc: '打样3天出货，批量7-15天，急单可加急处理，配合你的上新节奏，20年老厂从不拖延' },
@@ -228,10 +228,10 @@ export default function Home() {
 
       {/* Process Section */}
       <section className="py-20 bg-gray-900 border-t border-gray-800">
-        <div className="px-4">
+        <div className="px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">四步搞定，简单高效</h2>
           <p className="text-center text-gray-400 mb-16">从咨询到收货，全程跟进</p>
-          <div className="space-y-8 max-w-4xl mx-auto">
+          <div className="space-y-8 ">
             {[
               { num: '01', title: '沟通需求', desc: '加微信发图片，告诉我们：要画在什么上、想要什么风格、数量和交期要求。没有设计稿？我们可以帮你原创设计' },
               { num: '02', title: '报价打样', desc: '根据复杂度和数量报价，满意后3天内完成样品。看到实物再决定是否批量生产' },
@@ -254,9 +254,9 @@ export default function Home() {
 
       {/* Testimonials */}
       <section className="py-20 bg-black border-t border-gray-800">
-        <div className="px-4">
+        <div className="px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-white">合作客户这样说</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 ">
             {[
               { quote: '合作5年了，画工没得说，每次都按时交货，价格也公道', name: '李老板', from: '红棉女装批发档口' },
               { quote: '小批量也接单，很适合我们电商测款，爆了再加单', name: '陈小姐', from: '淘宝店主' },
