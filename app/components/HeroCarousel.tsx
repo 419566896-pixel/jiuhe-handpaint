@@ -84,7 +84,7 @@ export default function HeroCarousel() {
         >
           <Image
             src={`/images/${images[index]}`}
-            alt="手绘作品"
+            alt="久合手绘喷绘厂 - 手绘服装鞋履箱包作品展示"
             fill
             className="object-cover"
             priority={index === 0}
