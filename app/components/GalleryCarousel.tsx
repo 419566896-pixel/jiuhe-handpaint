@@ -88,7 +88,7 @@ export default function GalleryCarousel() {
       <div className="grid" style={{ gridTemplateAreas: '"stack"' }}>
         {/* Current group — fades out */}
         <div
-          className="grid grid-cols-3 md:grid-cols-6 gap-2"
+          className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2"
           style={{
             gridArea: 'stack',
             opacity: fading ? 0 : 1,
@@ -111,7 +111,7 @@ export default function GalleryCarousel() {
 
         {/* Next group — fades in */}
         <div
-          className="grid grid-cols-3 md:grid-cols-6 gap-2"
+          className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2"
           style={{
             gridArea: 'stack',
             opacity: fading ? 1 : 0,
