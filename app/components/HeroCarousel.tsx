@@ -61,25 +61,34 @@ export default function HeroCarousel() {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 2000);
-
     return () => clearInterval(timer);
   }, []);
 
+  // Only render current + adjacent images for performance
+  const getVisibleIndices = () => {
+    const prev = (currentIndex - 1 + images.length) % images.length;
+    const next = (currentIndex + 1) % images.length;
+    return [prev, currentIndex, next];
+  };
+
+  const visibleIndices = getVisibleIndices();
+
   return (
     <>
-      {images.map((img, index) => (
+      {visibleIndices.map((index) => (
         <div
-          key={img}
+          key={images[index]}
           className={`absolute inset-0 transition-opacity duration-1000 ${
             index === currentIndex ? 'opacity-30' : 'opacity-0'
           }`}
         >
           <Image
-            src={`/images/${img}`}
+            src={`/images/${images[index]}`}
             alt="手绘作品"
             fill
             className="object-cover"
             priority={index === 0}
+            loading={index === 0 ? undefined : 'lazy'}
           />
         </div>
       ))}
