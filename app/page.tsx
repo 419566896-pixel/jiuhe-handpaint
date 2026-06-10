@@ -1,6 +1,7 @@
 import AnimateOnScroll from "./components/AnimateOnScroll";
 import CollapsibleCategories from "./components/CollapsibleCategories";
 import ContactForm from "./components/ContactForm";
+import FAQ from "./components/FAQ";
 import GalleryCarousel from "./components/GalleryCarousel";
 import HeroCarousel from "./components/HeroCarousel";
 import ScrollToTop from "./components/ScrollToTop";
@@ -15,7 +16,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60 z-10" />
         <div className="relative z-20 text-center px-4 md:px-8 w-full">
           <h1 className="font-black mb-4 md:mb-8 leading-tight tracking-wider whitespace-nowrap" style={{ fontSize: 'clamp(2.5rem, 14vw, 16rem)' }}>
-            广州久合手绘厂
+            久合手绘喷绘工艺
           </h1>
           <p className="text-xl md:text-5xl lg:text-6xl mb-4 md:mb-6 text-gray-300 font-medium">
             手绘的温度，让每件单品都独一无二 · 服装鞋包品牌商都在找的手绘厂
@@ -288,6 +289,17 @@ export default function Home() {
       </section>
       </AnimateOnScroll>
 
+      {/* FAQ 常见问题 */}
+      <AnimateOnScroll>
+      <section id="faq" className="py-12 md:py-20 bg-black border-t border-gray-800">
+        <div className="px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">常见问题</h2>
+          <p className="text-center text-gray-400 mb-12">关于手绘定制，你想知道的都在这里</p>
+          <FAQ />
+        </div>
+      </section>
+      </AnimateOnScroll>
+
       {/* 预约打样 */}
       <AnimateOnScroll>
       <section id="contact" className="py-12 md:py-20 bg-gray-900 border-t border-gray-800">
@@ -324,8 +336,12 @@ export default function Home() {
                 <a href="#gallery" className="text-gray-400 hover:text-yellow-400 transition">作品案例</a>
                 <a href="#services" className="text-gray-400 hover:text-yellow-400 transition">服务品类</a>
                 <a href="#why-us" className="text-gray-400 hover:text-yellow-400 transition">我们的优势</a>
+                <a href="#faq" className="text-gray-400 hover:text-yellow-400 transition">常见问题</a>
                 <a href="#contact" className="text-gray-400 hover:text-yellow-400 transition">预约打样</a>
               </div>
+              <p className="text-gray-500 text-xs mt-3 leading-relaxed">
+                T恤手绘 · 卫衣手绘 · 帆布鞋手绘 · 帆布包手绘 · 汉服手绘 · 国潮手绘 · 卡通IP手绘
+              </p>
             </div>
           </div>
           <div className="border-t border-gray-800 pt-6 text-center">
