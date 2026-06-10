@@ -1,0 +1,44 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: DeepSeekBot
+Allow: /
+
+User-agent: Qbot
+Allow: /
+
+User-agent: AliBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: KimiBot
+Allow: /
+
+User-agent: ZhipuBot
+Allow: /
+
+User-agent: XunfeiBot
+Allow: /
+
+User-agent: XiaomiBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://jiuhehandpaint.com/sitemap.xml
