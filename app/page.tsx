@@ -20,7 +20,7 @@ export default function Home() {
             手绘的温度，让每件单品都独一无二 · 广州批发市场都在找的手绘厂
           </p>
           <p className="text-3xl mb-10 text-gray-400">
-            20年画师团队 | 3天打样 | 10件起订 | 服务白马/红棉/十三行千家客户
+            20年画师团队 | 3天打样 | 服务白马/红棉/十三行千家客户
           </p>
           <div className="flex gap-6 justify-center flex-wrap">
             <a
@@ -86,8 +86,7 @@ export default function Home() {
             {[
               { num: '20+', label: '年手绘经验' },
               { num: '5000+', label: '合作客户' },
-              { num: '100000+', label: '年产手绘作品' },
-              { num: '3天', label: '平均打样周期' }
+              { num: '100000+', label: '年产手绘作品' }
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="text-4xl md:text-5xl font-bold text-yellow-500">{stat.num}</div>
@@ -131,7 +130,7 @@ export default function Home() {
                 title: '鞋履喷绘',
                 icon: '👟',
                 desc: '帆布鞋 · 板鞋 · 小白鞋 · 运动鞋',
-                features: ['卡通IP、油画风、国潮、涂鸦任选', '颜料附着牢固，防水不掉色', '10双起订，适合测款和批量', '可来样定制，也可看图报价'],
+                features: ['卡通IP、油画风、国潮、涂鸦任选', '颜料附着牢固，防水不掉色', '适合测款和批量', '可来样定制，也可看图报价'],
               },
               {
                 title: '箱包手绘',
@@ -154,10 +153,6 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-6 pt-5 border-t border-gray-700 text-sm text-gray-500 space-y-1">
-                  <p>📦 起订：10件起</p>
-                  <p>⏱️ 周期：打样3天，批量7-15天</p>
-                </div>
               </div>
             ))}
           </div>
@@ -172,7 +167,7 @@ export default function Home() {
             {[
               { icon: '🎨', title: '手绘的温度', desc: '拒绝机器印花的冰冷感，每件都有画师的笔触和情感，图案生动灵活，细节丰富有层次' },
               { icon: '⚡', title: '交期靠谱', desc: '打样3天出货，批量7-15天，急单可加急处理，配合你的上新节奏，20年老厂从不拖延' },
-              { icon: '🎯', title: '灵活接单', desc: '10件起订，测款无压力，大批量价格更优，质量稳定，可大可小，可快可慢' },
+              { icon: '🎯', title: '灵活接单', desc: '测款无压力，大批量价格更优，质量稳定，可大可小，可快可慢' },
               { icon: '🏆', title: '技术过硬', desc: '画师团队20年经验，什么风格都能画，国风、潮流、卡通、油画...你要的我们都擅长' }
             ].map((item) => (
               <div key={item.title} className="text-center p-6 rounded-2xl bg-gray-800 border border-gray-700 hover:border-yellow-600 transition">
