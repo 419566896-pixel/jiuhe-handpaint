@@ -136,18 +136,24 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-full font-bold text-lg transition disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-full font-bold text-lg transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
         >
+          {loading && (
+            <svg className="w-5 h-5 animate-spin-slow" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+            </svg>
+          )}
           {loading ? '提交中...' : '提交预约'}
         </button>
 
         {message && (
           <div
-            className={`p-4 rounded-lg text-center ${
-              message.includes('成功') ? 'bg-green-500/20 text-green-300' : 'bg-red-500/20 text-red-300'
+            className={`p-4 rounded-lg text-center animate-success ${
+              message.includes('成功') ? 'bg-green-500/20 text-green-300 border border-green-500/30' : 'bg-red-500/20 text-red-300 border border-red-500/30'
             }`}
           >
-            {message}
+            {message.includes('成功') ? '✅ ' : '⚠️ '}{message}
           </div>
         )}
       </form>

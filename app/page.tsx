@@ -1,3 +1,4 @@
+import AnimateOnScroll from "./components/AnimateOnScroll";
 import CollapsibleCategories from "./components/CollapsibleCategories";
 import ContactForm from "./components/ContactForm";
 import GalleryCarousel from "./components/GalleryCarousel";
@@ -73,21 +74,24 @@ export default function Home() {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="py-12 md:py-20 bg-black border-t border-gray-800">
-        <div className="px-8 mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">看看我们画过什么</h2>
-          <p className="text-center text-gray-400 mb-12">每一件都是画师手工创作，拒绝机器印花的千篇一律</p>
-        </div>
+      <AnimateOnScroll>
+        <section id="gallery" className="py-12 md:py-20 bg-black border-t border-gray-800">
+          <div className="px-8 mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">看看我们画过什么</h2>
+            <p className="text-center text-gray-400 mb-12">每一件都是画师手工创作，拒绝机器印花的千篇一律</p>
+          </div>
 
-        {/* Carousel - full width */}
-        <GalleryCarousel />
+          {/* Carousel - full width */}
+          <GalleryCarousel />
 
-        <p className="text-center text-gray-400 mt-8 px-4">
-          以上仅展示部分案例，更多作品请添加微信查看完整作品集
-        </p>
-      </section>
+          <p className="text-center text-gray-400 mt-8 px-4">
+            以上仅展示部分案例，更多作品请添加微信查看完整作品集
+          </p>
+        </section>
+      </AnimateOnScroll>
 
       {/* Trust Section */}
+      <AnimateOnScroll>
       <section className="py-12 md:py-20 bg-gray-900 border-t border-gray-800">
         <div className="px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">
@@ -157,8 +161,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </AnimateOnScroll>
 
       {/* Services Section */}
+      <AnimateOnScroll>
       <section id="services" className="py-12 md:py-20 bg-gray-900 border-t border-gray-800">
         <div className="px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">三大品类全覆盖</h2>
@@ -204,8 +210,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </AnimateOnScroll>
 
       {/* Why Us Section */}
+      <AnimateOnScroll>
       <section id="why-us" className="py-12 md:py-20 bg-black border-t border-gray-800">
         <div className="px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">四大理由让全国商家都选我们</h2>
@@ -225,8 +233,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </AnimateOnScroll>
 
       {/* Process Section */}
+      <AnimateOnScroll>
       <section id="process" className="py-12 md:py-20 bg-gray-900 border-t border-gray-800">
         <div className="px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">四步搞定，简单高效</h2>
@@ -251,8 +261,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </AnimateOnScroll>
 
       {/* Testimonials */}
+      <AnimateOnScroll>
       <section id="testimonials" className="py-12 md:py-20 bg-black border-t border-gray-800">
         <div className="px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-white">合作客户这样说</h2>
@@ -274,8 +286,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </AnimateOnScroll>
 
       {/* 预约打样 */}
+      <AnimateOnScroll>
       <section id="contact" className="py-12 md:py-20 bg-gray-900 border-t border-gray-800">
         <div className="px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">预约打样</h2>
@@ -286,6 +300,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </AnimateOnScroll>
 
       {/* Footer */}
       <footer className="py-10 md:py-12 bg-black border-t border-gray-800">
