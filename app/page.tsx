@@ -321,11 +321,11 @@ export default function Home() {
       {/* 预约打样 */}
       <AnimateOnScroll>
       <section id="contact" className="py-12 md:py-20 bg-gray-900 border-t border-gray-800">
-        <div className="px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">预约打样</h2>
-          <p className="text-center text-gray-400 mb-12">48小时内回复</p>
+        <div className="px-8 max-w-2xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">预约打样</h2>
+          <p className="text-gray-400 mb-12">48小时内回复</p>
           <ContactForm />
-          <div className="mt-8 pt-8 border-t border-gray-700 text-center">
+          <div className="mt-8 pt-8 border-t border-gray-700">
             <p className="text-gray-400 text-lg">手机/微信：<span className="text-white font-semibold">13168873754</span></p>
           </div>
         </div>
