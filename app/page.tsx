@@ -1,6 +1,7 @@
 import AnimateOnScroll from "./components/AnimateOnScroll";
 import CollapsibleCategories from "./components/CollapsibleCategories";
 import ContactForm from "./components/ContactForm";
+import DouyinSection from "./components/DouyinSection";
 import FAQ from "./components/FAQ";
 import GalleryCarousel from "./components/GalleryCarousel";
 import HeroCarousel from "./components/HeroCarousel";
@@ -89,6 +90,15 @@ export default function Home() {
           <p className="text-center text-gray-400 mt-8 px-4">
             以上仅展示部分案例，更多作品请添加微信查看完整作品集
           </p>
+        </section>
+      </AnimateOnScroll>
+
+      {/* 抖音视频展示 */}
+      <AnimateOnScroll>
+        <section className="py-12 md:py-20 bg-gray-900 border-t border-gray-800">
+          <div className="px-8">
+            <DouyinSection />
+          </div>
         </section>
       </AnimateOnScroll>
 
