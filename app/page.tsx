@@ -66,7 +66,9 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">
             服务全国线上线下商家 · 20年口碑见证
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 text-center max-w-5xl mx-auto">
+
+          {/* 客户类型 */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 text-center max-w-5xl mx-auto">
             {[
               '服装批发/档口商家',
               '鞋履品牌/工厂',
@@ -84,11 +86,53 @@ export default function Home() {
             ))}
           </div>
 
+          {/* 手绘品类细分 */}
+          <h3 className="text-2xl font-bold text-center mt-16 mb-8 text-yellow-500">手绘品类全覆盖</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 max-w-6xl mx-auto">
+            {[
+              'T恤手绘', '卫衣手绘', '牛仔外套', '裤子手绘', '衬衫手绘', '连衣裙',
+              '男装手绘', '女装手绘', '童装手绘', '汉服手绘', '旗袍手绘', '民族服饰',
+              '欧货手绘', '潮牌手绘', '国潮风格', '复古风格', '油画风格', '卡通IP',
+              '帆布鞋手绘', '板鞋手绘', '小白鞋', '运动鞋喷绘', '皮鞋手绘', '靴子手绘',
+              '帆布包手绘', '手提包', '双肩包', '行李箱手绘', '钱包手绘', '卡包手绘'
+            ].map((item) => (
+              <div key={item} className="p-3 bg-gray-800/50 border border-gray-700 rounded-lg text-center hover:border-yellow-600 transition">
+                <p className="text-sm text-gray-300">{item}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* 全国批发市场覆盖 */}
+          <h3 className="text-2xl font-bold text-center mt-16 mb-8 text-yellow-500">覆盖全国批发市场商圈</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+            {[
+              { city: '广州', markets: '十三行 · 白马 · 红棉 · 沙河 · 中大布料 · 站西金宝 · 国际轻纺城' },
+              { city: '佛山', markets: '童装城 · 张槎针织 · 南海盐步内衣' },
+              { city: '东莞', markets: '虎门女装 · 大朗毛织 · 厚街鞋业' },
+              { city: '深圳', markets: '南油女装 · 华强北 · 东门' },
+              { city: '杭州', markets: '四季青 · 意法服饰 · 新杭派' },
+              { city: '上海', markets: '七浦路 · 轻纺市场' },
+              { city: '武汉', markets: '汉正街 · 万商白马' },
+              { city: '成都', markets: '荷花池 · 蓝光金荷花' },
+              { city: '北京', markets: '动物园 · 大红门 · 木樨园' },
+              { city: '常熟', markets: '服装城 · 招商城' },
+              { city: '织里', markets: '童装批发市场' },
+              { city: '即墨', markets: '服装批发市场' }
+            ].map((item) => (
+              <div key={item.city} className="p-4 bg-gray-800 border border-gray-700 rounded-xl hover:border-yellow-600 transition">
+                <p className="text-yellow-500 font-bold text-lg mb-1">{item.city}</p>
+                <p className="text-gray-400 text-sm">{item.markets}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* 数据 */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 text-center max-w-4xl mx-auto">
             {[
               { num: '20+', label: '年手绘经验' },
               { num: '5000+', label: '合作客户' },
-              { num: '100000+', label: '年产手绘作品' }
+              { num: '100000+', label: '年产手绘作品' },
+              { num: '30+', label: '覆盖城市' }
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="text-4xl md:text-5xl font-bold text-yellow-500">{stat.num}</div>
