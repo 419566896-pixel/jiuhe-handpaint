@@ -57,4 +57,27 @@ describe('首页', () => {
     expect(screen.getByText('看作品案例')).toHaveAttribute('href', '#gallery');
     expect(screen.getByText('立即预约打样')).toHaveAttribute('href', '#contact');
   });
+
+  it('应该渲染 Footer 版权信息', () => {
+    render(<Home />);
+    expect(screen.getByText(/版权所有/)).toBeInTheDocument();
+  });
+
+  it('应该有品类折叠按钮', () => {
+    render(<Home />);
+    expect(screen.getByText(/展开全部/)).toBeInTheDocument();
+  });
+
+  it('应该有全国批发市场覆盖', () => {
+    render(<Home />);
+    expect(screen.getByText(/覆盖全国批发市场商圈/)).toBeInTheDocument();
+    expect(screen.getByText('广州')).toBeInTheDocument();
+    expect(screen.getByText('杭州')).toBeInTheDocument();
+  });
+
+  it('应该有数据统计', () => {
+    render(<Home />);
+    expect(screen.getByText('20+')).toBeInTheDocument();
+    expect(screen.getByText('5000+')).toBeInTheDocument();
+  });
 });

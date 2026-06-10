@@ -1,43 +1,45 @@
+import CollapsibleCategories from "./components/CollapsibleCategories";
 import ContactForm from "./components/ContactForm";
 import GalleryCarousel from "./components/GalleryCarousel";
 import HeroCarousel from "./components/HeroCarousel";
+import ScrollToTop from "./components/ScrollToTop";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-900">
       {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-start justify-center bg-black text-white overflow-hidden pt-[4cm]">
+      <section className="relative min-h-[70vh] md:h-[50vh] flex items-start justify-center bg-black text-white overflow-hidden pt-16 md:pt-[4cm]">
         {/* 轮播背景 */}
         <HeroCarousel />
         {/* 渐变遮罩 */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60 z-10" />
-        <div className="relative z-20 text-center px-8 w-full">
-          <h1 className="font-black mb-8 leading-tight tracking-wider whitespace-nowrap" style={{ fontSize: 'clamp(4rem, 14vw, 16rem)' }}>
+        <div className="relative z-20 text-center px-4 md:px-8 w-full">
+          <h1 className="font-black mb-4 md:mb-8 leading-tight tracking-wider whitespace-nowrap" style={{ fontSize: 'clamp(2.5rem, 14vw, 16rem)' }}>
             广州久合手绘厂
           </h1>
-          <p className="text-5xl md:text-6xl mb-6 text-gray-300 font-medium">
+          <p className="text-xl md:text-5xl lg:text-6xl mb-4 md:mb-6 text-gray-300 font-medium">
             手绘的温度，让每件单品都独一无二 · 服装鞋包品牌商都在找的手绘厂
           </p>
-          <p className="text-3xl mb-10 text-gray-400">
+          <p className="text-base md:text-3xl mb-6 md:mb-10 text-gray-400">
             20年画师团队 | 全国发货 | 服务批发/品牌/电商5000+客户
           </p>
-          <div className="flex gap-6 justify-center flex-wrap">
+          <div className="flex gap-3 md:gap-6 justify-center flex-wrap">
             <a
               href="#gallery"
-              className="px-12 py-5 bg-white text-gray-900 rounded-full text-2xl font-semibold hover:bg-gray-100 transition"
+              className="px-6 md:px-12 py-3 md:py-5 bg-white text-gray-900 rounded-full text-base md:text-2xl font-semibold hover:bg-gray-100 transition"
             >
               看作品案例
             </a>
             <a
               href="#contact"
-              className="px-12 py-5 bg-orange-500 text-white rounded-full text-2xl font-semibold hover:bg-orange-600 transition"
+              className="px-6 md:px-12 py-3 md:py-5 bg-orange-500 text-white rounded-full text-base md:text-2xl font-semibold hover:bg-orange-600 transition"
             >
               立即预约打样
             </a>
           </div>
         </div>
 
-        {/* 联系方式 — 左下角 */}
-        <div className="absolute bottom-4 left-4 z-30">
+        {/* 联系方式 — 左下角（手机端隐藏，避免与二维码重叠） */}
+        <div className="hidden md:block absolute bottom-4 left-4 z-30">
           <div className="bg-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl px-10 py-5">
             <p className="text-yellow-400 text-3xl md:text-4xl font-bold">
               📞 13168873754
@@ -47,8 +49,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* 微信二维码 — 右下角偏左 */}
-        <div className="absolute bottom-4 right-24 z-30">
+        {/* 微信二维码 — 右下角偏左（手机端隐藏） */}
+        <div className="hidden md:block absolute bottom-4 right-24 z-30">
           <div className="bg-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-4 text-center">
             <div className="w-52 h-52 bg-gray-700 rounded-lg flex items-center justify-center mb-2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -58,10 +60,20 @@ export default function Home() {
             <p className="text-gray-400 text-sm">13168873754</p>
           </div>
         </div>
+
+        {/* 手机端 — 底部联系条 */}
+        <div className="md:hidden absolute bottom-0 left-0 right-0 z-30 bg-gray-900/90 backdrop-blur-sm border-t border-gray-700">
+          <div className="flex items-center justify-between px-4 py-3">
+            <p className="text-yellow-400 text-lg font-bold">📞 13168873754</p>
+            <a href="#contact" className="px-4 py-2 bg-orange-500 text-white rounded-full text-sm font-semibold">
+              立即咨询
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="py-20 bg-black border-t border-gray-800">
+      <section id="gallery" className="py-12 md:py-20 bg-black border-t border-gray-800">
         <div className="px-8 mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">看看我们画过什么</h2>
           <p className="text-center text-gray-400 mb-12">每一件都是画师手工创作，拒绝机器印花的千篇一律</p>
@@ -76,7 +88,7 @@ export default function Home() {
       </section>
 
       {/* Trust Section */}
-      <section className="py-20 bg-gray-900 border-t border-gray-800">
+      <section className="py-12 md:py-20 bg-gray-900 border-t border-gray-800">
         <div className="px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">
             服务全国线上线下商家 · 20年口碑见证
@@ -103,19 +115,7 @@ export default function Home() {
 
           {/* 手绘品类细分 */}
           <h3 className="text-2xl font-bold text-center mt-16 mb-8 text-yellow-500">手绘品类全覆盖</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 ">
-            {[
-              'T恤手绘', '卫衣手绘', '牛仔外套', '裤子手绘', '衬衫手绘', '连衣裙',
-              '男装手绘', '女装手绘', '童装手绘', '汉服手绘', '旗袍手绘', '民族服饰',
-              '欧货手绘', '潮牌手绘', '国潮风格', '复古风格', '油画风格', '卡通IP',
-              '帆布鞋手绘', '板鞋手绘', '小白鞋', '运动鞋喷绘', '皮鞋手绘', '靴子手绘',
-              '帆布包手绘', '手提包', '双肩包', '行李箱手绘', '钱包手绘', '卡包手绘'
-            ].map((item) => (
-              <div key={item} className="p-3 bg-gray-800/50 border border-gray-700 rounded-lg text-center hover:border-yellow-600 transition">
-                <p className="text-sm text-gray-300">{item}</p>
-              </div>
-            ))}
-          </div>
+          <CollapsibleCategories />
 
           {/* 全国批发市场覆盖 */}
           <h3 className="text-2xl font-bold text-center mt-16 mb-8 text-yellow-500">覆盖全国批发市场商圈</h3>
@@ -159,7 +159,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-900 border-t border-gray-800">
+      <section id="services" className="py-12 md:py-20 bg-gray-900 border-t border-gray-800">
         <div className="px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">三大品类全覆盖</h2>
           <p className="text-center text-gray-400 mb-16">你的创意我们来实现</p>
@@ -206,7 +206,7 @@ export default function Home() {
       </section>
 
       {/* Why Us Section */}
-      <section id="why-us" className="py-20 bg-black border-t border-gray-800">
+      <section id="why-us" className="py-12 md:py-20 bg-black border-t border-gray-800">
         <div className="px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">四大理由让全国商家都选我们</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 ">
@@ -227,7 +227,7 @@ export default function Home() {
       </section>
 
       {/* Process Section */}
-      <section id="process" className="py-20 bg-gray-900 border-t border-gray-800">
+      <section id="process" className="py-12 md:py-20 bg-gray-900 border-t border-gray-800">
         <div className="px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">四步搞定，简单高效</h2>
           <p className="text-center text-gray-400 mb-16">从咨询到收货，全程跟进</p>
@@ -238,13 +238,13 @@ export default function Home() {
               { num: '03', title: '确认生产', desc: '样品满意后签订合同，支付定金开始批量生产，过程中可随时跟进进度' },
               { num: '04', title: '验货交付', desc: '逐件质检，确保每件符合标准，支持自提或发货，有问题7天内可返工' }
             ].map((step) => (
-              <div key={step.num} className="flex gap-6 items-start">
-                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-yellow-600 text-white flex items-center justify-center text-xl font-bold">
+              <div key={step.num} className="flex gap-4 md:gap-6 items-start">
+                <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-yellow-600 text-white flex items-center justify-center text-lg md:text-xl font-bold">
                   {step.num}
                 </div>
-                <div className="pt-3">
-                  <h3 className="text-xl font-bold mb-2 text-white">{step.title}</h3>
-                  <p className="text-gray-400">{step.desc}</p>
+                <div className="pt-1 md:pt-3">
+                  <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2 text-white">{step.title}</h3>
+                  <p className="text-sm md:text-base text-gray-400">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -253,7 +253,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="py-20 bg-black border-t border-gray-800">
+      <section id="testimonials" className="py-12 md:py-20 bg-black border-t border-gray-800">
         <div className="px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-white">合作客户这样说</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 ">
@@ -276,7 +276,7 @@ export default function Home() {
       </section>
 
       {/* 预约打样 */}
-      <section id="contact" className="py-20 bg-gray-900 border-t border-gray-800">
+      <section id="contact" className="py-12 md:py-20 bg-gray-900 border-t border-gray-800">
         <div className="px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">预约打样</h2>
           <p className="text-center text-gray-400 mb-12">48小时内回复</p>
@@ -288,10 +288,38 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 bg-black text-gray-500 text-sm text-center">
-        <p>© 2026 久合手绘喷绘厂 版权所有 | 广州市白云区大冈村大园街12号</p>
-        <p className="mt-2">专注服装/鞋履/箱包手绘定制 · 全国发货 · 20年品质保障</p>
+      <footer className="py-10 md:py-12 bg-black border-t border-gray-800">
+        <div className="px-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            {/* 品牌 */}
+            <div>
+              <h4 className="text-yellow-500 font-bold text-lg mb-3">久合手绘喷绘厂</h4>
+              <p className="text-gray-400 text-sm leading-relaxed">20年专注服装/鞋履/箱包手绘定制，全国发货，服务5000+品牌客户。</p>
+            </div>
+            {/* 联系 */}
+            <div>
+              <h4 className="text-yellow-500 font-bold text-lg mb-3">联系我们</h4>
+              <p className="text-gray-400 text-sm mb-1">📞 13168873754（微信同号）</p>
+              <p className="text-gray-400 text-sm">📍 广州市白云区大冈村大园街12号</p>
+            </div>
+            {/* 快速链接 */}
+            <div>
+              <h4 className="text-yellow-500 font-bold text-lg mb-3">快速导航</h4>
+              <div className="flex flex-wrap gap-3 text-sm">
+                <a href="#gallery" className="text-gray-400 hover:text-yellow-400 transition">作品案例</a>
+                <a href="#services" className="text-gray-400 hover:text-yellow-400 transition">服务品类</a>
+                <a href="#why-us" className="text-gray-400 hover:text-yellow-400 transition">我们的优势</a>
+                <a href="#contact" className="text-gray-400 hover:text-yellow-400 transition">预约打样</a>
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 pt-6 text-center">
+            <p className="text-gray-500 text-sm">© 2026 久合手绘喷绘厂 版权所有</p>
+          </div>
+        </div>
       </footer>
+
+      <ScrollToTop />
     </div>
   );
 }

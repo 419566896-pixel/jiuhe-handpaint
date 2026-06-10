@@ -49,8 +49,9 @@ export default function ContactForm() {
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium mb-2">您的称呼 *</label>
+            <label htmlFor="contact-name" className="block text-sm font-medium mb-2">您的称呼 *</label>
             <input
+              id="contact-name"
               type="text"
               name="name"
               required
@@ -60,8 +61,9 @@ export default function ContactForm() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-2">联系电话 *</label>
+            <label htmlFor="contact-phone" className="block text-sm font-medium mb-2">联系电话 *</label>
             <input
+              id="contact-phone"
               type="tel"
               name="phone"
               required
@@ -74,8 +76,9 @@ export default function ContactForm() {
 
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium mb-2">微信号</label>
+            <label htmlFor="contact-wechat" className="block text-sm font-medium mb-2">微信号</label>
             <input
+              id="contact-wechat"
               type="text"
               name="wechat"
               disabled={loading}
@@ -84,8 +87,9 @@ export default function ContactForm() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-2">产品类型 *</label>
+            <label htmlFor="contact-type" className="block text-sm font-medium mb-2">产品类型 *</label>
             <select
+              id="contact-type"
               name="type"
               required
               disabled={loading}
@@ -101,8 +105,9 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">订单数量</label>
+          <label htmlFor="contact-quantity" className="block text-sm font-medium mb-2">订单数量</label>
           <select
+            id="contact-quantity"
             name="quantity"
             disabled={loading}
             className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-orange-500 disabled:opacity-50"
@@ -116,8 +121,9 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">需求描述 *</label>
+          <label htmlFor="contact-message" className="block text-sm font-medium mb-2">需求描述 *</label>
           <textarea
+            id="contact-message"
             name="message"
             required
             disabled={loading}
