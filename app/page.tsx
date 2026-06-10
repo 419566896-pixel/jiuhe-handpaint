@@ -64,18 +64,18 @@ export default function Home() {
       <section className="py-20 bg-gray-900 border-t border-gray-800">
         <div className="px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">
-            服务全国服装鞋包商圈 · 20年口碑见证
+            服务全国线上线下商家 · 20年口碑见证
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 text-center max-w-5xl mx-auto">
             {[
-              '服装批发商家',
-              '鞋履品牌商',
-              '箱包设计师',
-              '独立品牌主理人',
-              '淘宝/抖音电商',
-              '跨境电商卖家',
-              '文创周边定制',
-              '企业礼品定制'
+              '服装批发/档口商家',
+              '鞋履品牌/工厂',
+              '箱包设计师/工厂',
+              '独立品牌/设计师',
+              '淘宝/拼多多/抖音电商',
+              '跨境亚马逊/速卖通',
+              '直播带货/社群团购',
+              '文创/企业/礼品定制'
             ].map((market) => (
               <div key={market} className="p-4 bg-gray-800 border border-gray-700 rounded-lg hover:border-yellow-600 transition">
                 <span className="text-yellow-500 text-2xl">✓</span>
@@ -164,7 +164,7 @@ export default function Home() {
       {/* Why Us Section */}
       <section className="py-20 bg-black border-t border-gray-800">
         <div className="px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">四大理由让全国服装鞋包老板都选我们</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">四大理由让全国商家都选我们</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 max-w-6xl mx-auto">
             {[
               { icon: '🎨', title: '手绘的温度', desc: '拒绝机器印花的冰冷感，每件都有画师的笔触和情感，图案生动灵活，细节丰富有层次' },
