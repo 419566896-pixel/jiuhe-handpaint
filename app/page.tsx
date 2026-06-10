@@ -7,6 +7,7 @@ import GalleryCarousel from "./components/GalleryCarousel";
 import HeroCarousel from "./components/HeroCarousel";
 import ScrollToTop from "./components/ScrollToTop";
 import ShareButtons from "./components/ShareButtons";
+import VideoChannelSection from "./components/VideoChannelSection";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-900">
@@ -93,11 +94,16 @@ export default function Home() {
         </section>
       </AnimateOnScroll>
 
-      {/* 抖音视频展示 */}
+      {/* 社交平台展示 */}
       <AnimateOnScroll>
         <section className="py-12 md:py-20 bg-gray-900 border-t border-gray-800">
           <div className="px-8">
-            <DouyinSection />
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">关注我们，看更多手绘过程</h2>
+            <p className="text-center text-gray-400 mb-12">抖音、视频号同步更新手绘作品和工厂日常</p>
+            <div className="grid md:grid-cols-2 gap-8">
+              <DouyinSection />
+              <VideoChannelSection />
+            </div>
           </div>
         </section>
       </AnimateOnScroll>
