@@ -296,17 +296,16 @@ export default function Home() {
       <AnimateOnScroll>
       <section className="py-12 md:py-20 bg-black border-t border-gray-800">
         <div className="px-8">
-          <div className="grid lg:grid-cols-2 gap-8">
-
-            {/* 左侧上：常见问题 */}
-            <div id="faq">
+          <div className="bottom-grid">
+            {/* 左上：常见问题 */}
+            <div id="faq" className="area-faq">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">常见问题</h2>
               <p className="text-gray-400 mb-8">关于手绘定制，你想知道的都在这里</p>
               <FAQ />
             </div>
 
-            {/* 右侧上：抖音 */}
-            <div className="flex flex-col gap-8">
+            {/* 右侧：抖音 + 视频号（跨两行） */}
+            <div className="flex flex-col gap-8 area-social">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">关注我们</h2>
                 <p className="text-gray-400 mb-8">抖音、视频号同步更新手绘作品和工厂日常</p>
@@ -315,8 +314,8 @@ export default function Home() {
               <VideoChannelSection />
             </div>
 
-            {/* 左侧下：预约打样 */}
-            <div id="contact" className="mt-4">
+            {/* 左下：预约打样 */}
+            <div id="contact" className="area-contact">
               <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">预约打样</h2>
               <p className="text-gray-400 mb-6">48小时内回复</p>
               <ContactForm />

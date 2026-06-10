@@ -97,3 +97,27 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #666;
 }
+
+/* FAQ + 预约 + 社交 并排布局 */
+.bottom-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "faq"
+    "social"
+    "contact";
+}
+
+@media (min-width: 1024px) {
+  .bottom-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "faq social"
+      "contact social";
+  }
+}
+
+.area-faq { grid-area: faq; }
+.area-social { grid-area: social; }
+.area-contact { grid-area: contact; }
