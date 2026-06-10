@@ -5,6 +5,7 @@ import FAQ from "./components/FAQ";
 import GalleryCarousel from "./components/GalleryCarousel";
 import HeroCarousel from "./components/HeroCarousel";
 import ScrollToTop from "./components/ScrollToTop";
+import ShareButtons from "./components/ShareButtons";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-900">
@@ -344,8 +345,11 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-6 text-center">
-            <p className="text-gray-500 text-sm">© 2026 久合手绘喷绘厂 版权所有</p>
+          <div className="border-t border-gray-800 pt-6">
+            <div className="mb-4">
+              <ShareButtons />
+            </div>
+            <p className="text-gray-500 text-sm text-center">© 2026 久合手绘喷绘厂 版权所有</p>
           </div>
         </div>
       </footer>

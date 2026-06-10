@@ -88,11 +88,31 @@ export default function RootLayout({
         <meta name="googlebot" content="index, follow" />
         <meta name="baiduspider" content="index, follow" />
         <meta name="bytedance" content="index, follow" />
-        {/* 告诉 AI 这是商业服务页面 */}
         <meta name="page-type" content="business-service" />
         <meta name="business-type" content="hand-painting-custom-factory" />
         <meta name="service-area" content="全国" />
         <meta name="contact-phone" content="13168873754" />
+
+        {/* 微信分享优化 */}
+        <meta property="og:type" content="website" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        {/* 微信域名验证 - 需要在微信公众平台获取验证码 */}
+        {/* <meta name="weixin:verification" content="your-wechat-verification-code" /> */}
+
+        {/* 抖音分享优化 */}
+        <meta name="bytedance:image" content={`${SITE_URL}/images/IMG_1189.JPG`} />
+        <meta name="bytedance:title" content="久合手绘喷绘工艺 - 服装鞋包手绘定制" />
+
+        {/* 小红书分享优化 */}
+        <meta name="xiaohongshu:card" content="summary_large_image" />
+        <meta name="xiaohongshu:title" content="久合手绘喷绘厂 | 服装鞋包手绘定制" />
+        <meta name="xiaohongshu:description" content="20年手绘工厂，T恤/帆布鞋/帆布包手绘定制，全国发货" />
+        <meta name="xiaohongshu:image" content={`${SITE_URL}/images/IMG_1189.JPG`} />
+
+        {/* 通用社交分享 */}
+        <meta name="thumbnail" content={`${SITE_URL}/images/IMG_1189.JPG`} />
+        <meta name="image" content={`${SITE_URL}/images/IMG_1189.JPG`} />
       </head>
       <body className="min-h-full flex flex-col">
         {/* JSON-LD: LocalBusiness */}
