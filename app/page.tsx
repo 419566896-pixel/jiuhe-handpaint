@@ -17,10 +17,10 @@ export default function Home() {
             久合手绘喷绘工艺
           </h1>
           <p className="text-5xl md:text-6xl mb-6 text-gray-300 font-medium">
-            手绘的温度，让每件单品都独一无二 · 广州批发市场都在找的手绘厂
+            手绘的温度，让每件单品都独一无二 · 全国服装老板都在找的手绘厂
           </p>
           <p className="text-3xl mb-10 text-gray-400">
-            20年画师团队 | 3天打样 | 服务白马/红棉/十三行千家客户
+            20年画师团队 | 3天打样 | 全国发货 | 服务5000+品牌客户
           </p>
           <div className="flex gap-6 justify-center flex-wrap">
             <a
@@ -64,16 +64,18 @@ export default function Home() {
       <section className="py-20 bg-gray-900 border-t border-gray-800">
         <div className="px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">
-            服务广州时尚商圈 · 20年口碑见证
+            服务全国服装商圈 · 20年口碑见证
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12 text-center max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 text-center max-w-5xl mx-auto">
             {[
-              '中大布料市场',
-              '国际轻纺城',
-              '十三行批发商圈',
-              '站西金宝',
-              '红棉国际时装城',
-              '沙河时尚市场'
+              '广州十三行/白马/红棉',
+              '佛山童装/张槎针织',
+              '东莞虎门女装',
+              '杭州四季青/意法',
+              '上海七浦路',
+              '武汉汉正街',
+              '成都荷花池',
+              '全国电商卖家'
             ].map((market) => (
               <div key={market} className="p-4 bg-gray-800 border border-gray-700 rounded-lg hover:border-yellow-600 transition">
                 <span className="text-yellow-500 text-2xl">✓</span>
@@ -162,7 +164,7 @@ export default function Home() {
       {/* Why Us Section */}
       <section className="py-20 bg-black border-t border-gray-800">
         <div className="px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">四大理由让广州批发商都选我们</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">四大理由让全国服装老板都选我们</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 max-w-6xl mx-auto">
             {[
               { icon: '🎨', title: '手绘的温度', desc: '拒绝机器印花的冰冷感，每件都有画师的笔触和情感，图案生动灵活，细节丰富有层次' },
@@ -232,7 +234,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 bg-black text-gray-500 text-sm text-center">
         <p>© 2024 久合手绘喷绘厂 版权所有 | 广州市白云区石井大冈村大园街12号</p>
-        <p className="mt-2">专注服装/鞋履/箱包手绘定制 · 服务广州时尚商圈20年</p>
+        <p className="mt-2">专注服装/鞋履/箱包手绘定制 · 全国发货 · 20年品质保障</p>
       </footer>
     </div>
   );
