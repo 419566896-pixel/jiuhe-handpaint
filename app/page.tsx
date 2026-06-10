@@ -292,19 +292,20 @@ export default function Home() {
       </section>
       </AnimateOnScroll>
 
-      {/* FAQ + 社交平台 并排 */}
+      {/* FAQ + 预约 + 社交平台 */}
       <AnimateOnScroll>
-      <section id="faq" className="py-12 md:py-20 bg-black border-t border-gray-800">
+      <section className="py-12 md:py-20 bg-black border-t border-gray-800">
         <div className="px-8">
           <div className="grid lg:grid-cols-2 gap-8">
-            {/* 左侧：常见问题 */}
-            <div>
+
+            {/* 左侧上：常见问题 */}
+            <div id="faq">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">常见问题</h2>
               <p className="text-gray-400 mb-8">关于手绘定制，你想知道的都在这里</p>
               <FAQ />
             </div>
 
-            {/* 右侧：抖音 + 视频号 */}
+            {/* 右侧上：抖音 */}
             <div className="flex flex-col gap-8">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">关注我们</h2>
@@ -313,20 +314,17 @@ export default function Home() {
               <DouyinSection />
               <VideoChannelSection />
             </div>
-          </div>
-        </div>
-      </section>
-      </AnimateOnScroll>
 
-      {/* 预约打样 */}
-      <AnimateOnScroll>
-      <section id="contact" className="py-12 md:py-20 bg-gray-900 border-t border-gray-800">
-        <div className="px-8 max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">预约打样</h2>
-          <p className="text-gray-400 mb-12">48小时内回复</p>
-          <ContactForm />
-          <div className="mt-8 pt-8 border-t border-gray-700">
-            <p className="text-gray-400 text-lg">手机/微信：<span className="text-white font-semibold">13168873754</span></p>
+            {/* 左侧下：预约打样 */}
+            <div id="contact" className="mt-4">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">预约打样</h2>
+              <p className="text-gray-400 mb-6">48小时内回复</p>
+              <ContactForm />
+              <div className="mt-6 pt-6 border-t border-gray-700">
+                <p className="text-gray-400 text-base">手机/微信：<span className="text-white font-semibold">13168873754</span></p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
