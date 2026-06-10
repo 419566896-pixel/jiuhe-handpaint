@@ -292,29 +292,30 @@ export default function Home() {
       </section>
       </AnimateOnScroll>
 
-      {/* FAQ 常见问题 */}
+      {/* FAQ + 社交平台 并排 */}
       <AnimateOnScroll>
       <section id="faq" className="py-12 md:py-20 bg-black border-t border-gray-800">
         <div className="px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">常见问题</h2>
-          <p className="text-center text-gray-400 mb-12">关于手绘定制，你想知道的都在这里</p>
-          <FAQ />
-        </div>
-      </section>
-      </AnimateOnScroll>
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* 左侧：常见问题 */}
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">常见问题</h2>
+              <p className="text-gray-400 mb-8">关于手绘定制，你想知道的都在这里</p>
+              <FAQ />
+            </div>
 
-      {/* 社交平台展示 */}
-      <AnimateOnScroll>
-        <section className="py-12 md:py-20 bg-gray-900 border-t border-gray-800">
-          <div className="px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">关注我们，看更多手绘过程</h2>
-            <p className="text-center text-gray-400 mb-12">抖音、视频号同步更新手绘作品和工厂日常</p>
-            <div className="grid md:grid-cols-2 gap-8">
+            {/* 右侧：抖音 + 视频号 */}
+            <div className="flex flex-col gap-8">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">关注我们</h2>
+                <p className="text-gray-400 mb-8">抖音、视频号同步更新手绘作品和工厂日常</p>
+              </div>
               <DouyinSection />
               <VideoChannelSection />
             </div>
           </div>
-        </section>
+        </div>
+      </section>
       </AnimateOnScroll>
 
       {/* 预约打样 */}
