@@ -98,3 +98,32 @@ html {
   background: #666;
 }
 
+/* FAQ + 预约 + 社交 并排布局 */
+.bottom-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+/* 手机端：单栏 */
+.bottom-grid {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "faq"
+    "social"
+    "contact";
+}
+
+/* 桌面端：双栏 */
+@media (min-width: 1024px) {
+  .bottom-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "faq    social"
+      "contact social";
+  }
+}
+
+.area-faq { grid-area: faq; }
+.area-social { grid-area: social; }
+.area-contact { grid-area: contact; }
+
