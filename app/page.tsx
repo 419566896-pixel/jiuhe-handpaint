@@ -296,16 +296,47 @@ export default function Home() {
       <AnimateOnScroll>
       <section className="py-12 md:py-20 bg-black border-t border-gray-800">
         <div className="px-4 md:px-8">
-          <div className="bottom-grid">
+          {/* 手机端单栏 */}
+          <div className="lg:hidden space-y-8">
+            <div id="faq">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">常见问题</h2>
+              <p className="text-gray-400 mb-8">关于手绘定制，你想知道的都在这里</p>
+              <FAQ />
+            </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">关注我们</h2>
+              <p className="text-gray-400 mb-8">抖音、视频号同步更新手绘作品和工厂日常</p>
+            </div>
+            <DouyinSection />
+            <VideoChannelSection />
+            <div id="contact">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">预约打样</h2>
+              <p className="text-gray-400 mb-6">48小时内回复</p>
+              <ContactForm />
+              <div className="mt-6 pt-6 border-t border-gray-700">
+                <p className="text-gray-400 text-base">手机/微信：<span className="text-white font-semibold">13168873754</span></p>
+              </div>
+            </div>
+          </div>
+
+          {/* 桌面端双栏（之前OK的版本） */}
+          <div
+            className="hidden lg:grid gap-8"
+            style={{
+              gridTemplateColumns: '1fr 1fr',
+              gridTemplateRows: 'auto auto',
+              gridTemplateAreas: '"faq social" "contact social"',
+            }}
+          >
             {/* 左上：常见问题 */}
-            <div id="faq" className="area-faq">
+            <div id="faq" style={{ gridArea: 'faq' }}>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">常见问题</h2>
               <p className="text-gray-400 mb-8">关于手绘定制，你想知道的都在这里</p>
               <FAQ />
             </div>
 
             {/* 右侧：抖音 + 视频号（跨两行） */}
-            <div className="flex flex-col gap-8 area-social">
+            <div className="flex flex-col gap-8" style={{ gridArea: 'social' }}>
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">关注我们</h2>
                 <p className="text-gray-400 mb-8">抖音、视频号同步更新手绘作品和工厂日常</p>
@@ -315,7 +346,7 @@ export default function Home() {
             </div>
 
             {/* 左下：预约打样 */}
-            <div id="contact" className="area-contact">
+            <div id="contact" style={{ gridArea: 'contact' }}>
               <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">预约打样</h2>
               <p className="text-gray-400 mb-6">48小时内回复</p>
               <ContactForm />

@@ -49,7 +49,8 @@ describe('首页', () => {
     render(<Home />);
     const matches = screen.getAllByText(/预约打样/);
     expect(matches.length).toBeGreaterThanOrEqual(1);
-    expect(screen.getByPlaceholderText(/姓名或公司名/)).toBeInTheDocument();
+    const nameInputs = screen.getAllByPlaceholderText(/姓名或公司名/);
+    expect(nameInputs.length).toBeGreaterThanOrEqual(1);
   });
 
   it('应该有 CTA 按钮链接', () => {
