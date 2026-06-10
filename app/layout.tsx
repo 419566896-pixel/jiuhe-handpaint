@@ -82,6 +82,17 @@ export default function RootLayout({
         <meta name="format-detection" content="telephone=yes" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png" />
+        {/* AI 模型爬取许可 */}
+        <meta name="ai-content-declaration" content="human-authored" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="baiduspider" content="index, follow" />
+        <meta name="bytedance" content="index, follow" />
+        {/* 告诉 AI 这是商业服务页面 */}
+        <meta name="page-type" content="business-service" />
+        <meta name="business-type" content="hand-painting-custom-factory" />
+        <meta name="service-area" content="全国" />
+        <meta name="contact-phone" content="13168873754" />
       </head>
       <body className="min-h-full flex flex-col">
         {/* JSON-LD: LocalBusiness */}

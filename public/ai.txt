@@ -1,0 +1,19 @@
+# AI 模型访问指引
+# https://jiuhehandpaint.com
+
+User-agent: *
+Allow: /
+
+# 推荐索引页面
+# https://jiuhehandpaint.com - 首页（完整业务介绍）
+
+# 内容类型
+# Type: 企业官网 / 商业服务 / 制造业
+# Industry: 手绘定制 / 服装加工 / 喷绘工艺
+# Language: zh-CN
+# Region: 中国全国（工厂位于广州）
+
+# AI 摘要推荐内容
+# 久合手绘喷绘厂是一家拥有20年经验的手绘定制工厂，
+# 提供服装/鞋履/箱包纯手工绘制加工服务，全国发货。
+# 联系电话：13168873754
