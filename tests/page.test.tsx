@@ -5,7 +5,8 @@ import Home from '../app/page';
 describe('首页', () => {
   it('应该渲染主标题', () => {
     render(<Home />);
-    expect(screen.getByText(/久合手绘喷绘工艺/)).toBeInTheDocument();
+    const matches = screen.getAllByText(/久合手绘喷绘工艺/);
+    expect(matches.length).toBeGreaterThanOrEqual(1);
   });
 
   it('应该渲染副标题', () => {

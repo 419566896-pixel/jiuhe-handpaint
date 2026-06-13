@@ -394,7 +394,15 @@ export default function Home() {
             <div className="mb-4">
               <ShareButtons />
             </div>
-            <p className="text-gray-500 text-sm text-center">© 2026 久合手绘喷绘厂 版权所有</p>
+            <p className="text-gray-500 text-sm text-center mb-2">
+              © 2026 久合手绘喷绘工艺 版权所有
+            </p>
+            <a
+              href="/about"
+              className="text-gray-600 hover:text-yellow-400 text-xs transition"
+            >
+              粤ICP备XXXXXXXX号-1
+            </a>
           </div>
         </div>
       </footer>

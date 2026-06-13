@@ -63,9 +63,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // 后续添加百度/Google站长验证码
-    // google: "your-google-verification-code",
-    // baidu: "your-baidu-verification-code",
+    google: "your-google-verification-code",
   },
   category: "business",
 };
@@ -113,6 +111,18 @@ export default function RootLayout({
         {/* 通用社交分享 */}
         <meta name="thumbnail" content={`${SITE_URL}/images/IMG_1189.JPG`} />
         <meta name="image" content={`${SITE_URL}/images/IMG_1189.JPG`} />
+        {/* 百度统计 — 替换 HMT-xxx 为实际代码 */}
+        {/* 
+        <script>
+          var _hmt = _hmt || [];
+          (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?HMT-xxx";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+          })();
+        </script>
+        */}
       </head>
       <body className="min-h-full flex flex-col">
         {/* JSON-LD: LocalBusiness */}

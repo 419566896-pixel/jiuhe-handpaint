@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState, useEffect, useCallback } from 'react';
+import Lightbox from './Lightbox';
 
 const images: { src: string; alt: string }[] = [
   { src: 'IMG_1189.JPG', alt: '久合手绘 - 服装手绘作品' },
@@ -63,9 +64,17 @@ function getGroup(idx: number) {
   );
 }
 
+// Flatten all image indices for lightbox
+const allImages = images.map((img) => ({
+  src: `/images/${img.src}`,
+  alt: img.alt,
+}));
+
 export default function GalleryCarousel() {
   const [group, setGroup] = useState(0);
   const [fading, setFading] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIdx, setLightboxIdx] = useState(0);
 
   const nextGroup = useCallback(() => {
     setFading(true);
@@ -83,71 +92,108 @@ export default function GalleryCarousel() {
   const current = getGroup(group);
   const next = getGroup((group + 1) % groupCount);
 
+  // (used in render if needed)
+
+  const handleClick = (i: number) => {
+    const globalIdx = (group * COLS + i) % images.length;
+    setLightboxIdx(globalIdx);
+    setLightboxOpen(true);
+  };
+
   return (
-    <div className="w-full bg-black p-2 overflow-hidden">
-      <div className="grid" style={{ gridTemplateAreas: '"stack"' }}>
-        {/* Current group — fades out */}
-        <div
-          className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2"
-          style={{
-            gridArea: 'stack',
-            opacity: fading ? 0 : 1,
-            transition: 'opacity 0.8s ease',
-          }}
-        >
-          {current.map((img, i) => (
-            <div key={`c-${group}-${i}`} className="relative aspect-[3/4] overflow-hidden rounded-sm">
-              <Image
-                src={`/images/${img.src}`}
-                alt={img.alt}
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-500"
-                sizes="(max-width: 768px) 33vw, 16vw"
-                loading="lazy"
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Next group — fades in */}
-        <div
-          className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2"
-          style={{
-            gridArea: 'stack',
-            opacity: fading ? 1 : 0,
-            transition: 'opacity 0.8s ease',
-          }}
-        >
-          {next.map((img, i) => (
-            <div key={`n-${group}-${i}`} className="relative aspect-[3/4] overflow-hidden rounded-sm">
-              <Image
-                src={`/images/${img.src}`}
-                alt={img.alt}
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-500"
-                sizes="(max-width: 768px) 33vw, 16vw"
-                loading="lazy"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Dots */}
-      <div className="flex gap-2 justify-center mt-4 flex-wrap">
-        {Array.from({ length: groupCount }).map((_, i) => (
-          <button
-            key={i}
-            onClick={() => {
-              setGroup(i);
-              setFading(false);
+    <>
+      <div className="w-full bg-black p-2 overflow-hidden">
+        <div className="grid" style={{ gridTemplateAreas: '"stack"' }}>
+          {/* Current group — fades out */}
+          <div
+            className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 cursor-pointer"
+            style={{
+              gridArea: 'stack',
+              opacity: fading ? 0 : 1,
+              transition: 'opacity 0.8s ease',
             }}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              i === group ? 'bg-yellow-500 w-6' : 'bg-gray-600 w-2'
-            }`}
-          />
-        ))}
+          >
+            {current.map((img, i) => (
+              <div
+                key={`c-${group}-${i}`}
+                className="relative aspect-[3/4] overflow-hidden rounded-sm group"
+                onClick={() => handleClick(i)}
+              >
+                <Image
+                  src={`/images/${img.src}`}
+                  alt={img.alt}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  sizes="(max-width: 768px) 33vw, 16vw"
+                  loading="lazy"
+                />
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all flex items-end justify-center pb-3 opacity-0 group-hover:opacity-100">
+                  <span className="text-white text-sm font-medium bg-black/60 px-3 py-1 rounded-full">
+                    🔍 点击查看
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Next group — fades in */}
+          <div
+            className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 cursor-pointer"
+            style={{
+              gridArea: 'stack',
+              opacity: fading ? 1 : 0,
+              transition: 'opacity 0.8s ease',
+            }}
+          >
+            {next.map((img, i) => (
+              <div
+                key={`n-${group}-${i}`}
+                className="relative aspect-[3/4] overflow-hidden rounded-sm group"
+                onClick={() => handleClick(i)}
+              >
+                <Image
+                  src={`/images/${img.src}`}
+                  alt={img.alt}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  sizes="(max-width: 768px) 33vw, 16vw"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all flex items-end justify-center pb-3 opacity-0 group-hover:opacity-100">
+                  <span className="text-white text-sm font-medium bg-black/60 px-3 py-1 rounded-full">
+                    🔍 点击查看
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Dots */}
+        <div className="flex gap-2 justify-center mt-4 flex-wrap">
+          {Array.from({ length: groupCount }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                setGroup(i);
+                setFading(false);
+              }}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                i === group ? 'bg-yellow-500 w-6' : 'bg-gray-600 w-2'
+              }`}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+
+      {/* Lightbox */}
+      <Lightbox
+        images={allImages}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        initialIndex={lightboxIdx}
+      />
+    </>
   );
 }
