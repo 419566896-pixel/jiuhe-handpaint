@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-const SHARE_URL = 'https://jiuhehandpaint.com';
+const SHARE_URL = 'https://jiuheshouhui.cn';
 const SHARE_TITLE = '久合手绘喷绘厂 - 服装鞋包手绘定制工厂';
 const SHARE_DESC = '20年手绘经验，T恤/帆布鞋/帆布包手绘定制，全国发货，电话13168873754';
 
@@ -75,9 +75,9 @@ export default function ShareButtons() {
         QQ
       </button>
 
-      {/* 抖音 - 提示文字 */}
+      {/* 抖音 */}
       <a
-        href="https://www.douyin.com"
+        href="https://www.douyin.com/user/jiuheshouhui"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center gap-1.5 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-full text-sm font-medium transition"
@@ -86,9 +86,9 @@ export default function ShareButtons() {
         抖音
       </a>
 
-      {/* 小红书 - 提示文字 */}
+      {/* 小红书 */}
       <a
-        href="https://www.xiaohongshu.com"
+        href="https://www.xiaohongshu.com/search_result?keyword=久合手绘"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center gap-1.5 px-4 py-2 bg-red-400 hover:bg-red-300 text-white rounded-full text-sm font-medium transition"

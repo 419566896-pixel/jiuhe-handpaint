@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const SITE_URL = "https://419566896-pixel.github.io/jiuhe-handpaint";
+const SITE_URL = "https://jiuheshouhui.cn";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     locale: "zh_CN",
     images: [
       {
-        url: `${SITE_URL}/images/IMG_1189.JPG`,
+        url: `${SITE_URL}/images/IMG_1189.webp`,
         width: 1920,
         height: 1280,
         alt: "久合手绘喷绘厂 - 手绘作品展示",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "久合手绘喷绘工艺 - 服装鞋包手绘定制工厂",
     description: "20年手绘经验，全国发货，服务5000+品牌客户。电话13168873754",
-    images: [`${SITE_URL}/images/IMG_1189.JPG`],
+    images: [`${SITE_URL}/images/IMG_1189.webp`],
   },
   robots: {
     index: true,
@@ -63,7 +63,8 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
+    // TODO: 在 Google Search Console 获取验证码后填入
+    // google: "your-google-verification-code",
   },
   category: "business",
 };
@@ -99,30 +100,20 @@ export default function RootLayout({
         {/* <meta name="weixin:verification" content="your-wechat-verification-code" /> */}
 
         {/* 抖音分享优化 */}
-        <meta name="bytedance:image" content={`${SITE_URL}/images/IMG_1189.JPG`} />
+        <meta name="bytedance:image" content={`${SITE_URL}/images/IMG_1189.webp`} />
         <meta name="bytedance:title" content="久合手绘喷绘工艺 - 服装鞋包手绘定制" />
 
         {/* 小红书分享优化 */}
         <meta name="xiaohongshu:card" content="summary_large_image" />
         <meta name="xiaohongshu:title" content="久合手绘喷绘厂 | 服装鞋包手绘定制" />
         <meta name="xiaohongshu:description" content="20年手绘工厂，T恤/帆布鞋/帆布包手绘定制，全国发货" />
-        <meta name="xiaohongshu:image" content={`${SITE_URL}/images/IMG_1189.JPG`} />
+        <meta name="xiaohongshu:image" content={`${SITE_URL}/images/IMG_1189.webp`} />
 
         {/* 通用社交分享 */}
-        <meta name="thumbnail" content={`${SITE_URL}/images/IMG_1189.JPG`} />
-        <meta name="image" content={`${SITE_URL}/images/IMG_1189.JPG`} />
-        {/* 百度统计 — 替换 HMT-xxx 为实际代码 */}
-        {/* 
-        <script>
-          var _hmt = _hmt || [];
-          (function() {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?HMT-xxx";
-            var s = document.getElementsByTagName("script")[0]; 
-            s.parentNode.insertBefore(hm, s);
-          })();
-        </script>
-        */}
+        <meta name="thumbnail" content={`${SITE_URL}/images/IMG_1189.webp`} />
+        <meta name="image" content={`${SITE_URL}/images/IMG_1189.webp`} />
+        {/* TODO: 百度统计 — 注册 https://tongji.baidu.com 获取代码后取消注释 */}
+        {/* <script dangerouslySetInnerHTML={{ __html: `var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?YOUR_HM_ID";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s)})();`}} /> */}
       </head>
       <body className="min-h-full flex flex-col">
         {/* JSON-LD: LocalBusiness */}
@@ -138,7 +129,7 @@ export default function RootLayout({
               description: "20年专注服装/鞋履/箱包手绘定制，全国发货，服务5000+品牌客户",
               url: SITE_URL,
               telephone: "13168873754",
-              email: "contact@jiuhehandpaint.com",
+              email: "contact@jiuheshouhui.cn",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "大冈村大园街12号",
@@ -168,7 +159,7 @@ export default function RootLayout({
                 closes: "18:00",
               },
               sameAs: [],
-              image: `${SITE_URL}/images/IMG_1189.JPG`,
+              image: `${SITE_URL}/images/IMG_1189.webp`,
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "4.9",

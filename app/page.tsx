@@ -5,12 +5,14 @@ import DouyinSection from "./components/DouyinSection";
 import FAQ from "./components/FAQ";
 import GalleryCarousel from "./components/GalleryCarousel";
 import HeroCarousel from "./components/HeroCarousel";
+import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
 import ShareButtons from "./components/ShareButtons";
 import VideoChannelSection from "./components/VideoChannelSection";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-900">
+      <Navbar />
       {/* Hero Section */}
       <section className="relative min-h-[70vh] md:min-h-[50vh] md:h-auto flex items-start justify-center bg-black text-white overflow-hidden pt-16 md:pt-20 lg:pt-[4cm] pb-20 md:pb-8">
         {/* 轮播背景 */}
@@ -59,7 +61,7 @@ export default function Home() {
           <div className="bg-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-4 text-center">
             <div className="w-52 h-52 bg-gray-700 rounded-lg flex items-center justify-center mb-2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/wechat-qr.png" alt="微信二维码" className="w-full h-full object-contain rounded-lg" />
+              <img src="/images/wechat-qr.webp" alt="微信二维码" className="w-full h-full object-contain rounded-lg" />
             </div>
             <p className="text-yellow-400 text-lg font-bold">扫码加微信</p>
             <p className="text-gray-400 text-sm">13168873754</p>
@@ -397,12 +399,10 @@ export default function Home() {
             <p className="text-gray-500 text-sm text-center mb-2">
               © 2026 久合手绘喷绘工艺 版权所有
             </p>
-            <a
-              href="/about"
-              className="text-gray-600 hover:text-yellow-400 text-xs transition"
-            >
-              粤ICP备XXXXXXXX号-1
-            </a>
+            <p className="text-gray-600 text-xs">
+              {/* TODO: ICP 备案号 — 取得备案后取消注释 */}
+              {/* <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">粤ICP备XXXXXXXX号-1</a> */}
+            </p>
           </div>
         </div>
       </footer>

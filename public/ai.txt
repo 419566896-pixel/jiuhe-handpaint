@@ -1,11 +1,11 @@
 # AI 模型访问指引
-# https://jiuhehandpaint.com
+# https://jiuheshouhui.cn
 
 User-agent: *
 Allow: /
 
 # 推荐索引页面
-# https://jiuhehandpaint.com - 首页（完整业务介绍）
+# https://jiuheshouhui.cn - 首页（完整业务介绍）
 
 # 内容类型
 # Type: 企业官网 / 商业服务 / 制造业

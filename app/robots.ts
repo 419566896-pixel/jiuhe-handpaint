@@ -40,6 +40,6 @@ export default function robots(): MetadataRoute.Robots {
       // You.com
       { userAgent: "YouBot", allow: "/" },
     ],
-    sitemap: "https://jiuhehandpaint.com/sitemap.xml",
+    sitemap: "https://jiuheshouhui.cn/sitemap.xml",
   };
 }
