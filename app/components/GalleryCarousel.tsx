@@ -72,16 +72,15 @@ const allImages = images.map((img) => ({
 
 export default function GalleryCarousel() {
   const [group, setGroup] = useState(0);
-  const [fading, setFading] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIdx, setLightboxIdx] = useState(0);
 
   const nextGroup = useCallback(() => {
-    setFading(true);
-    setTimeout(() => {
-      setGroup((prev) => (prev + 1) % groupCount);
-      setFading(false);
-    }, 800);
+    setGroup((prev) => (prev + 1) % groupCount);
+  }, []);
+
+  const prevGroup = useCallback(() => {
+    setGroup((prev) => (prev - 1 + groupCount) % groupCount);
   }, []);
 
   useEffect(() => {
@@ -90,9 +89,6 @@ export default function GalleryCarousel() {
   }, [nextGroup]);
 
   const current = getGroup(group);
-  const next = getGroup((group + 1) % groupCount);
-
-  // (used in render if needed)
 
   const handleClick = (i: number) => {
     const globalIdx = (group * COLS + i) % images.length;
@@ -103,71 +99,28 @@ export default function GalleryCarousel() {
   return (
     <>
       <div className="w-full bg-black p-2 overflow-hidden">
-        <div className="grid" style={{ gridTemplateAreas: '"stack"' }}>
-          {/* Current group — fades out */}
-          <div
-            className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 cursor-pointer"
-            style={{
-              gridArea: 'stack',
-              opacity: fading ? 0 : 1,
-              transition: 'opacity 0.8s ease',
-            }}
-          >
-            {current.map((img, i) => (
-              <div
-                key={`c-${group}-${i}`}
-                className="relative aspect-[3/4] overflow-hidden rounded-sm group"
-                onClick={() => handleClick(i)}
-              >
-                <Image
-                  src={`/images/${img.src}`}
-                  alt={img.alt}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  sizes="(max-width: 768px) 33vw, 16vw"
-                  loading="lazy"
-                />
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all flex items-end justify-center pb-3 opacity-0 group-hover:opacity-100">
-                  <span className="text-white text-sm font-medium bg-black/60 px-3 py-1 rounded-full">
-                    🔍 点击查看
-                  </span>
-                </div>
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 cursor-pointer">
+          {current.map((img, i) => (
+            <div
+              key={`${group}-${i}`}
+              className="relative aspect-[3/4] overflow-hidden rounded-sm group"
+              onClick={() => handleClick(i)}
+            >
+              <Image
+                src={`/images/${img.src}`}
+                alt={img.alt}
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                sizes="(max-width: 768px) 33vw, 16vw"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all flex items-end justify-center pb-3 opacity-0 group-hover:opacity-100">
+                <span className="text-white text-sm font-medium bg-black/60 px-3 py-1 rounded-full">
+                  🔍 点击查看
+                </span>
               </div>
-            ))}
-          </div>
-
-          {/* Next group — fades in */}
-          <div
-            className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 cursor-pointer"
-            style={{
-              gridArea: 'stack',
-              opacity: fading ? 1 : 0,
-              transition: 'opacity 0.8s ease',
-            }}
-          >
-            {next.map((img, i) => (
-              <div
-                key={`n-${group}-${i}`}
-                className="relative aspect-[3/4] overflow-hidden rounded-sm group"
-                onClick={() => handleClick(i)}
-              >
-                <Image
-                  src={`/images/${img.src}`}
-                  alt={img.alt}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  sizes="(max-width: 768px) 33vw, 16vw"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all flex items-end justify-center pb-3 opacity-0 group-hover:opacity-100">
-                  <span className="text-white text-sm font-medium bg-black/60 px-3 py-1 rounded-full">
-                    🔍 点击查看
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
         {/* Dots */}
@@ -175,19 +128,37 @@ export default function GalleryCarousel() {
           {Array.from({ length: groupCount }).map((_, i) => (
             <button
               key={i}
-              onClick={() => {
-                setGroup(i);
-                setFading(false);
-              }}
+              type="button"
+              aria-label={`第 ${i + 1} 组图片`}
+              onClick={() => setGroup(i)}
               className={`h-2 rounded-full transition-all duration-300 ${
                 i === group ? 'bg-yellow-500 w-6' : 'bg-gray-600 w-2'
               }`}
             />
           ))}
         </div>
+
+        {/* 上一组 / 下一组 */}
+        <div className="flex justify-center gap-4 mt-4">
+          <button
+            type="button"
+            aria-label="上一组图片"
+            onClick={prevGroup}
+            className="px-6 py-2 bg-gray-800 text-gray-300 rounded-full border border-gray-700 hover:border-yellow-500 hover:text-yellow-400 transition text-sm"
+          >
+            ↑ 上一组
+          </button>
+          <button
+            type="button"
+            aria-label="下一组图片"
+            onClick={nextGroup}
+            className="px-6 py-2 bg-gray-800 text-gray-300 rounded-full border border-gray-700 hover:border-yellow-500 hover:text-yellow-400 transition text-sm"
+          >
+            下一组 ↓
+          </button>
+        </div>
       </div>
 
-      {/* Lightbox */}
       <Lightbox
         images={allImages}
         isOpen={lightboxOpen}

@@ -78,7 +78,7 @@ export default function HeroCarousel() {
       {visibleIndices.map((index) => (
         <div
           key={images[index]}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
+          className={`absolute top-14 md:top-16 left-0 right-0 bottom-2/5 transition-opacity duration-1000 ${
             index === currentIndex ? 'opacity-30' : 'opacity-0'
           }`}
         >

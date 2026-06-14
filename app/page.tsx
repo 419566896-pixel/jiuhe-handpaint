@@ -1,91 +1,76 @@
 import AnimateOnScroll from "./components/AnimateOnScroll";
-import CollapsibleCategories from "./components/CollapsibleCategories";
 import ContactForm from "./components/ContactForm";
-import DouyinSection from "./components/DouyinSection";
 import FAQ from "./components/FAQ";
 import GalleryCarousel from "./components/GalleryCarousel";
-import HeroCarousel from "./components/HeroCarousel";
 import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
 import ShareButtons from "./components/ShareButtons";
-import VideoChannelSection from "./components/VideoChannelSection";
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-gray-900 pb-14 md:pb-0">
+      {/* SEO 隐藏文案 - 搜索引擎可爬取 */}
+      <div className="sr-only" role="complementary" aria-label="网站介绍">
+        <h1>久合手绘喷绘工艺 - 全国服装鞋包箱商家都在找的手绘厂</h1>
+        <p>
+          久合手绘喷绘工艺厂位于广州市白云区，拥有20余年手绘喷绘经验，是一家专业为服装、鞋履、箱包品牌商提供纯手工绘制加工的工厂。
+          我们拥有一支经验丰富的画师团队，擅长国潮、油画风、卡通IP、复古文艺、涂鸦街头等多种风格，
+          能够在T恤、卫衣、牛仔外套、汉服、旗袍、连衣裙、衬衫、裤子等各类服装面料上进行手绘创作。
+        </p>
+        <p>
+          鞋履手绘方面，久合手绘支持帆布鞋、板鞋、小白鞋、运动鞋、皮鞋等各类鞋款的纯手工喷绘和绘制，
+          使用专业颜料，防水不掉色，适合品牌测款和批量生产。
+          箱包手绘覆盖帆布包、手提包、双肩包、行李箱、皮包等，可根据客户提供的设计稿或图片进行定制绘制。
+        </p>
+        <p>
+          久合手绘工厂服务全国线上线下商家，覆盖广州十三行、白马、红棉、沙河、中大布料、站西金宝、国际轻纺城，
+          佛山童装城、张槎针织、南海盐步内衣，东莞虎门女装、大朗毛织、厚街鞋业，
+          深圳南油女装、华强北、东门，杭州四季青、意法服饰、新杭派，
+          上海七浦路、轻纺市场，武汉汉正街、万商白马，成都荷花池、蓝光金荷花，
+          北京动物园、大红门、木樨园，常熟服装城、招商城，织里童装批发市场，即墨服装批发市场等全国30多个城市的核心批发商圈。
+        </p>
+        <p>
+          久合手绘支持来图定制、来样打样，小批量灵活接单，大批量价格更优。
+          合作客户包括服装批发档口商家、鞋履品牌工厂、箱包设计师工厂、独立品牌设计师、
+          淘宝拼多多抖音电商卖家、跨境亚马逊速卖通商家、直播带货社群团购、文创企业礼品定制等各类商家。
+          20年来累计服务超过5000家客户，年产手绘作品超过100000件。
+        </p>
+        <p>
+          手绘定制流程简单：第一步沟通需求，加微信发送图片说明风格要求；第二步报价打样，画师出样确认后完成样品；
+          第三步确认生产，签合同付定金开始批量绘制；第四步验货交付，逐件质检合格后自提或物流发货。
+          久合手绘使用专业纺织颜料和喷绘设备，确保水洗不褪色、日常穿着无忧。
+        </p>
+        <p>
+          联系久合手绘：电话13168873754，地址广州市白云区大冈村大园街12号。
+          欢迎全国各地服装鞋包箱品牌商、批发商、电商卖家、设计师前来咨询合作。
+          久合手绘，手绘的温度，让每件单品都独一无二。
+        </p>
+      </div>
       <Navbar />
+      {/* 手机端底部固定联系条 */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-gray-900 border-t border-gray-700">
+        <div className="flex items-center justify-between px-4 py-3">
+          <p className="text-yellow-400 text-lg font-bold">📞 13168873754</p>
+          <a href="tel:13168873754" className="px-4 py-2 bg-orange-500 text-white rounded-full text-sm font-semibold">
+            立即咨询
+          </a>
+        </div>
+      </div>
       {/* Hero Section */}
-      <section className="relative min-h-0 md:min-h-[50vh] md:h-auto flex items-start justify-center bg-black text-white overflow-hidden pt-16 md:pt-20 lg:pt-[4cm] pb-14 md:pb-8">
-        {/* 轮播背景 */}
-        <HeroCarousel />
-        {/* 渐变遮罩 */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60 z-10" />
+      <section className="relative flex items-center justify-center bg-black text-white overflow-hidden pt-16 pb-4 md:pt-20 md:pb-8">
         <div className="relative z-20 text-center px-4 md:px-8 w-full">
-          <h1 className="font-black mb-4 md:mb-8 leading-tight tracking-wider" style={{ fontSize: 'clamp(2rem, 8vw, 16rem)' }}>
+          <h1 className="font-black mb-2 md:mb-4 leading-tight tracking-wider" style={{ fontSize: 'clamp(2.5rem, 10vw, 16rem)' }}>
             久合手绘喷绘工艺
           </h1>
-          <p className="text-base md:text-5xl lg:text-6xl mb-4 md:mb-6 text-gray-300 font-medium leading-snug">
-            手绘的温度，让每件单品都独一无二<br className="md:hidden" />· 服装鞋包品牌商都在找的手绘厂
+          <p className="text-xl md:text-5xl lg:text-6xl mb-3 md:mb-6 text-gray-300 font-medium leading-snug">
+            全国服装鞋包箱商家都在找的手绘厂
           </p>
-          <p className="text-sm md:text-3xl mb-6 md:mb-10 text-gray-400">
-            20年画师团队 | 全国发货 | 服务批发/品牌/电商5000+客户
-          </p>
-          <div className="flex gap-3 md:gap-6 justify-center flex-wrap">
-            <a
-              href="#gallery"
-              className="px-6 md:px-12 py-3 md:py-5 bg-white text-gray-900 rounded-full text-base md:text-2xl font-semibold hover:bg-gray-100 transition"
-            >
-              看作品案例
-            </a>
-            <a
-              href="#contact"
-              className="px-6 md:px-12 py-3 md:py-5 bg-orange-500 text-white rounded-full text-base md:text-2xl font-semibold hover:bg-orange-600 transition"
-            >
-              立即预约打样
-            </a>
-          </div>
         </div>
 
-        {/* 联系方式 — 左下角（手机端隐藏，避免与二维码重叠） */}
-        <div className="hidden md:block absolute bottom-4 left-4 z-30">
-          <div className="bg-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl px-10 py-5">
-            <p className="text-yellow-400 text-3xl md:text-4xl font-bold">
-              📞 13168873754
-              &nbsp;&nbsp;|&nbsp;&nbsp;
-              📍 广州市白云区大冈村大园街12号
-            </p>
-          </div>
-        </div>
-
-        {/* 微信二维码 — 右下角偏左（手机端隐藏） */}
-        <div className="hidden md:block absolute bottom-4 right-24 z-30">
-          <div className="bg-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-4 text-center">
-            <div className="w-52 h-52 bg-gray-700 rounded-lg flex items-center justify-center mb-2">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/wechat-qr.webp" alt="微信二维码" className="w-full h-full object-contain rounded-lg" />
-            </div>
-            <p className="text-yellow-400 text-lg font-bold">扫码加微信</p>
-            <p className="text-gray-400 text-sm">13168873754</p>
-          </div>
-        </div>
-
-        {/* 手机端 — 底部联系条 */}
-        <div className="md:hidden absolute bottom-0 left-0 right-0 z-30 bg-gray-900/90 backdrop-blur-sm border-t border-gray-700">
-          <div className="flex items-center justify-between px-4 py-3">
-            <p className="text-yellow-400 text-lg font-bold">📞 13168873754</p>
-            <a href="#contact" className="px-4 py-2 bg-orange-500 text-white rounded-full text-sm font-semibold">
-              立即咨询
-            </a>
-          </div>
-        </div>
       </section>
 
       {/* Gallery Section */}
       <AnimateOnScroll>
         <section id="gallery" className="py-12 md:py-20 bg-black border-t border-gray-800">
-          <div className="px-4 md:px-8 mb-8">
-            <h2 className="text-2xl md:text-4xl font-bold text-center mb-4 text-white">看看我们画过什么</h2>
-            <p className="text-center text-gray-400 mb-6 md:mb-12">每一件都是画师手工创作，拒绝机器印花的千篇一律</p>
-          </div>
 
           {/* Carousel - full width */}
           <GalleryCarousel />
@@ -94,79 +79,6 @@ export default function Home() {
             以上仅展示部分案例，更多作品请添加微信查看完整作品集
           </p>
         </section>
-      </AnimateOnScroll>
-
-      {/* Trust Section */}
-      <AnimateOnScroll>
-      <section className="py-12 md:py-20 bg-gray-900 border-t border-gray-800">
-        <div className="px-4 md:px-8">
-          <h2 className="text-2xl md:text-4xl font-bold text-center mb-4 text-white">
-            服务全国线上线下商家 · 20年口碑见证
-          </h2>
-
-          {/* 客户类型 */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12 text-center">
-            {[
-              '服装批发/档口商家',
-              '鞋履品牌/工厂',
-              '箱包设计师/工厂',
-              '独立品牌/设计师',
-              '淘宝/拼多多/抖音电商',
-              '跨境亚马逊/速卖通',
-              '直播带货/社群团购',
-              '文创/企业/礼品定制'
-            ].map((market) => (
-              <div key={market} className="p-4 bg-gray-800 border border-gray-700 rounded-lg hover:border-yellow-600 transition">
-                <span className="text-yellow-500 text-2xl">✓</span>
-                <p className="mt-2 font-medium text-gray-200">{market}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* 手绘品类细分 */}
-          <h3 className="text-2xl font-bold text-center mt-16 mb-8 text-yellow-500">手绘品类全覆盖</h3>
-          <CollapsibleCategories />
-
-          {/* 全国批发市场覆盖 */}
-          <h3 className="text-2xl font-bold text-center mt-16 mb-8 text-yellow-500">覆盖全国批发市场商圈</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ">
-            {[
-              { city: '广州', markets: '十三行 · 白马 · 红棉 · 沙河 · 中大布料 · 站西金宝 · 国际轻纺城' },
-              { city: '佛山', markets: '童装城 · 张槎针织 · 南海盐步内衣' },
-              { city: '东莞', markets: '虎门女装 · 大朗毛织 · 厚街鞋业' },
-              { city: '深圳', markets: '南油女装 · 华强北 · 东门' },
-              { city: '杭州', markets: '四季青 · 意法服饰 · 新杭派' },
-              { city: '上海', markets: '七浦路 · 轻纺市场' },
-              { city: '武汉', markets: '汉正街 · 万商白马' },
-              { city: '成都', markets: '荷花池 · 蓝光金荷花' },
-              { city: '北京', markets: '动物园 · 大红门 · 木樨园' },
-              { city: '常熟', markets: '服装城 · 招商城' },
-              { city: '织里', markets: '童装批发市场' },
-              { city: '即墨', markets: '服装批发市场' }
-            ].map((item) => (
-              <div key={item.city} className="p-4 bg-gray-800 border border-gray-700 rounded-xl hover:border-yellow-600 transition">
-                <p className="text-yellow-500 font-bold text-lg mb-1">{item.city}</p>
-                <p className="text-gray-400 text-sm">{item.markets}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* 数据 */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-16 text-center ">
-            {[
-              { num: '20+', label: '年手绘经验' },
-              { num: '5000+', label: '合作客户' },
-              { num: '100000+', label: '年产手绘作品' },
-              { num: '30+', label: '覆盖城市' }
-            ].map((stat) => (
-              <div key={stat.label}>
-                <div className="text-4xl md:text-5xl font-bold text-yellow-500">{stat.num}</div>
-                <div className="mt-2 text-gray-400">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
       </AnimateOnScroll>
 
       {/* Services Section */}
@@ -294,6 +206,22 @@ export default function Home() {
       </section>
       </AnimateOnScroll>
 
+      {/* 关于我们 */}
+      <AnimateOnScroll>
+      <section id="about" className="py-12 md:py-20 bg-gray-900 border-t border-gray-800">
+        <div className="px-4 md:px-8 max-w-4xl mx-auto text-gray-300 leading-relaxed space-y-6">
+          <h2 className="text-2xl md:text-4xl font-bold text-center mb-8 text-white">关于我们</h2>
+          <p>久合手绘喷绘工艺厂位于广州市白云区，拥有20余年手绘喷绘经验，是一家专业为服装、鞋履、箱包品牌商提供纯手工绘制加工的工厂。我们拥有一支经验丰富的画师团队，擅长国潮、油画风、卡通IP、复古文艺、涂鸦街头等多种风格。</p>
+          <p><strong className="text-white">服装手绘喷绘：</strong>T恤、卫衣、牛仔外套、汉服、旗袍、连衣裙、衬衫、裤子等各类面料，适配棉、牛仔、雪纺、真丝等材质，水洗不褪色，日常穿着无忧。</p>
+          <p><strong className="text-white">鞋履手绘：</strong>帆布鞋、板鞋、小白鞋、运动鞋、皮鞋等各类鞋款纯手工喷绘，颜料附着牢固，防水不掉色，适合品牌测款和批量生产。</p>
+          <p><strong className="text-white">箱包手绘：</strong>帆布包、手提包、双肩包、行李箱、皮包等，可根据客户设计稿或图片进行定制绘制。</p>
+          <p><strong className="text-white">服务客户：</strong>服装批发档口商家、鞋履品牌工厂、箱包设计师工厂、独立品牌设计师、淘宝拼多多抖音电商卖家、跨境亚马逊速卖通商家、直播带货社群团购、文创企业礼品定制等。</p>
+          <p><strong className="text-white">覆盖市场：</strong>广州十三行、白马、红棉、沙河，佛山童装城，东莞虎门，深圳南油，杭州四季青，上海七浦路，武汉汉正街，成都荷花池，北京动物园、大红门，常熟服装城，织里童装市场等全国30+城市批发商圈。</p>
+          <p><strong className="text-white">合作数据：</strong>20年手绘经验，5000+合作客户，年产手绘作品100000+件，覆盖30+城市。</p>
+        </div>
+      </section>
+      </AnimateOnScroll>
+
       {/* FAQ + 预约 + 社交平台 */}
       <AnimateOnScroll>
       <section className="py-12 md:py-20 bg-black border-t border-gray-800">
@@ -305,12 +233,6 @@ export default function Home() {
               <p className="text-gray-400 mb-8">关于手绘定制，你想知道的都在这里</p>
               <FAQ />
             </div>
-            <div>
-              <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">关注我们</h2>
-              <p className="text-gray-400 mb-8">抖音、视频号同步更新手绘作品和工厂日常</p>
-            </div>
-            <DouyinSection />
-            <VideoChannelSection />
             <div id="contact">
               <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">预约打样</h2>
               <p className="text-gray-400 mb-6">48小时内回复</p>
@@ -335,16 +257,6 @@ export default function Home() {
               <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">常见问题</h2>
               <p className="text-gray-400 mb-8">关于手绘定制，你想知道的都在这里</p>
               <FAQ />
-            </div>
-
-            {/* 右侧：抖音 + 视频号（跨两行） */}
-            <div className="flex flex-col gap-8" style={{ gridArea: 'social' }}>
-              <div>
-                <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">关注我们</h2>
-                <p className="text-gray-400 mb-8">抖音、视频号同步更新手绘作品和工厂日常</p>
-              </div>
-              <DouyinSection />
-              <VideoChannelSection />
             </div>
 
             {/* 左下：预约打样 */}
@@ -383,7 +295,7 @@ export default function Home() {
               <div className="flex flex-wrap gap-3 text-sm">
                 <a href="#gallery" className="text-gray-400 hover:text-yellow-400 transition">作品案例</a>
                 <a href="#services" className="text-gray-400 hover:text-yellow-400 transition">服务品类</a>
-                <a href="#why-us" className="text-gray-400 hover:text-yellow-400 transition">我们的优势</a>
+                <a href="#about" className="text-gray-400 hover:text-yellow-400 transition">关于我们</a>
                 <a href="#faq" className="text-gray-400 hover:text-yellow-400 transition">常见问题</a>
                 <a href="#contact" className="text-gray-400 hover:text-yellow-400 transition">预约打样</a>
               </div>
