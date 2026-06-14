@@ -14,19 +14,19 @@ export default function Home() {
     <div className="min-h-screen bg-gray-900">
       <Navbar />
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] md:min-h-[50vh] md:h-auto flex items-start justify-center bg-black text-white overflow-hidden pt-16 md:pt-20 lg:pt-[4cm] pb-20 md:pb-8">
+      <section className="relative min-h-0 md:min-h-[50vh] md:h-auto flex items-start justify-center bg-black text-white overflow-hidden pt-16 md:pt-20 lg:pt-[4cm] pb-14 md:pb-8">
         {/* 轮播背景 */}
         <HeroCarousel />
         {/* 渐变遮罩 */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60 z-10" />
         <div className="relative z-20 text-center px-4 md:px-8 w-full">
-          <h1 className="font-black mb-4 md:mb-8 leading-tight tracking-wider whitespace-nowrap" style={{ fontSize: 'clamp(2.5rem, 14vw, 16rem)' }}>
+          <h1 className="font-black mb-4 md:mb-8 leading-tight tracking-wider" style={{ fontSize: 'clamp(2rem, 8vw, 16rem)' }}>
             久合手绘喷绘工艺
           </h1>
-          <p className="text-xl md:text-5xl lg:text-6xl mb-4 md:mb-6 text-gray-300 font-medium">
-            手绘的温度，让每件单品都独一无二 · 服装鞋包品牌商都在找的手绘厂
+          <p className="text-base md:text-5xl lg:text-6xl mb-4 md:mb-6 text-gray-300 font-medium leading-snug">
+            手绘的温度，让每件单品都独一无二<br className="md:hidden" />· 服装鞋包品牌商都在找的手绘厂
           </p>
-          <p className="text-base md:text-3xl mb-6 md:mb-10 text-gray-400">
+          <p className="text-sm md:text-3xl mb-6 md:mb-10 text-gray-400">
             20年画师团队 | 全国发货 | 服务批发/品牌/电商5000+客户
           </p>
           <div className="flex gap-3 md:gap-6 justify-center flex-wrap">
@@ -82,9 +82,9 @@ export default function Home() {
       {/* Gallery Section */}
       <AnimateOnScroll>
         <section id="gallery" className="py-12 md:py-20 bg-black border-t border-gray-800">
-          <div className="px-8 mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">看看我们画过什么</h2>
-            <p className="text-center text-gray-400 mb-12">每一件都是画师手工创作，拒绝机器印花的千篇一律</p>
+          <div className="px-4 md:px-8 mb-8">
+            <h2 className="text-2xl md:text-4xl font-bold text-center mb-4 text-white">看看我们画过什么</h2>
+            <p className="text-center text-gray-400 mb-6 md:mb-12">每一件都是画师手工创作，拒绝机器印花的千篇一律</p>
           </div>
 
           {/* Carousel - full width */}
@@ -100,7 +100,7 @@ export default function Home() {
       <AnimateOnScroll>
       <section className="py-12 md:py-20 bg-gray-900 border-t border-gray-800">
         <div className="px-4 md:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">
+          <h2 className="text-2xl md:text-4xl font-bold text-center mb-4 text-white">
             服务全国线上线下商家 · 20年口碑见证
           </h2>
 
@@ -173,10 +173,10 @@ export default function Home() {
       <AnimateOnScroll>
       <section id="services" className="py-12 md:py-20 bg-gray-900 border-t border-gray-800">
         <div className="px-4 md:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">三大品类全覆盖</h2>
-          <p className="text-center text-gray-400 mb-16">你的创意我们来实现</p>
+          <h2 className="text-2xl md:text-4xl font-bold text-center mb-4 text-white">三大品类全覆盖</h2>
+          <p className="text-center text-gray-400 mb-8 md:mb-16">你的创意我们来实现</p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 ">
             {[
               {
                 title: '服装手绘',
@@ -197,7 +197,7 @@ export default function Home() {
                 features: ['纯手工绘制，每个都是独立艺术品', '适配帆布/皮革/牛津布等材质', '可配合品牌Logo融入设计', '适合电商差异化、文创周边、品牌礼品'],
               }
             ].map((service) => (
-              <div key={service.title} className="bg-gray-800 border border-gray-700 rounded-2xl p-8 hover:border-yellow-600 transition">
+              <div key={service.title} className="bg-gray-800 border border-gray-700 rounded-2xl p-5 md:p-8 hover:border-yellow-600 transition">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-4xl">{service.icon}</span>
                   <h3 className="text-xl font-bold text-white">{service.title}</h3>
@@ -222,8 +222,8 @@ export default function Home() {
       <AnimateOnScroll>
       <section id="why-us" className="py-12 md:py-20 bg-black border-t border-gray-800">
         <div className="px-4 md:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">四大理由让全国商家都选我们</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 ">
+          <h2 className="text-2xl md:text-4xl font-bold text-center mb-4 text-white">四大理由让全国商家都选我们</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mt-8 md:mt-12 ">
             {[
               { icon: '🎨', title: '手绘的温度', desc: '拒绝机器印花的冰冷感，每件都有画师的笔触和情感，图案生动灵活，细节丰富有层次' },
               { icon: '⚡', title: '交期靠谱', desc: '急单可加急处理，配合你的上新节奏，20年老厂从不拖延' },
@@ -245,8 +245,8 @@ export default function Home() {
       <AnimateOnScroll>
       <section id="process" className="py-12 md:py-20 bg-gray-900 border-t border-gray-800">
         <div className="px-4 md:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">四步搞定，简单高效</h2>
-          <p className="text-center text-gray-400 mb-16">从咨询到收货，全程跟进</p>
+          <h2 className="text-2xl md:text-4xl font-bold text-center mb-4 text-white">四步搞定，简单高效</h2>
+          <p className="text-center text-gray-400 mb-8 md:mb-16">从咨询到收货，全程跟进</p>
           <div className="space-y-8 ">
             {[
               { num: '01', title: '沟通需求', desc: '加微信发图片，告诉我们：要画在什么上、想要什么风格、数量和交期要求。没有设计稿？我们可以帮你原创设计' },
@@ -273,7 +273,7 @@ export default function Home() {
       <AnimateOnScroll>
       <section id="testimonials" className="py-12 md:py-20 bg-black border-t border-gray-800">
         <div className="px-4 md:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-white">合作客户这样说</h2>
+          <h2 className="text-2xl md:text-4xl font-bold text-center mb-8 md:mb-16 text-white">合作客户这样说</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 ">
             {[
               { quote: '合作5年了，画工没得说，每次都按时交货，价格也公道', name: '李老板', from: '红棉女装批发档口' },
@@ -301,12 +301,12 @@ export default function Home() {
           {/* 手机端单栏 */}
           <div className="lg:hidden space-y-8">
             <div id="faq">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">常见问题</h2>
+              <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">常见问题</h2>
               <p className="text-gray-400 mb-8">关于手绘定制，你想知道的都在这里</p>
               <FAQ />
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">关注我们</h2>
+              <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">关注我们</h2>
               <p className="text-gray-400 mb-8">抖音、视频号同步更新手绘作品和工厂日常</p>
             </div>
             <DouyinSection />
@@ -332,7 +332,7 @@ export default function Home() {
           >
             {/* 左上：常见问题 */}
             <div id="faq" style={{ gridArea: 'faq' }}>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">常见问题</h2>
+              <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">常见问题</h2>
               <p className="text-gray-400 mb-8">关于手绘定制，你想知道的都在这里</p>
               <FAQ />
             </div>
@@ -340,7 +340,7 @@ export default function Home() {
             {/* 右侧：抖音 + 视频号（跨两行） */}
             <div className="flex flex-col gap-8" style={{ gridArea: 'social' }}>
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">关注我们</h2>
+                <h2 className="text-2xl md:text-4xl font-bold mb-4 text-white">关注我们</h2>
                 <p className="text-gray-400 mb-8">抖音、视频号同步更新手绘作品和工厂日常</p>
               </div>
               <DouyinSection />
