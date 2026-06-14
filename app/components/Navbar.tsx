@@ -25,8 +25,8 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-800'
-          : 'bg-black/40 backdrop-blur-sm'
+          ? 'bg-gray-900 shadow-lg border-b border-gray-800'
+          : 'bg-black'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-14 md:h-16">
@@ -68,7 +68,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-gray-900/98 backdrop-blur-md border-t border-gray-800 pb-4">
+        <div className="md:hidden bg-gray-900 border-t border-gray-800 pb-4">
           {navLinks.map((link) => (
             <a
               key={link.href}
