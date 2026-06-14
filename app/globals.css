@@ -80,6 +80,17 @@ html {
   border-radius: 4px;
 }
 
+/* 防止固定导航栏遮挡锚点跳转内容 */
+[id] {
+  scroll-margin-top: 3.5rem; /* 对应移动端导航栏 h-14 */
+}
+
+@media (min-width: 768px) {
+  [id] {
+    scroll-margin-top: 4rem; /* 对应桌面端导航栏 h-16 */
+  }
+}
+
 /* 滚动条美化 */
 ::-webkit-scrollbar {
   width: 8px;
