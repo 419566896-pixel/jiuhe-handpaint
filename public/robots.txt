@@ -1,21 +1,67 @@
 User-agent: *
 Allow: /
-Sitemap: https://419566896-pixel.github.io/jiuhe-handpaint/sitemap.xml
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
 
+Sitemap: https://jiuheshouhui.cn/sitemap.xml
+
+# === 国内大模型 AI 爬虫 ===
+# 豆包 / 字节跳动
 User-agent: Bytespider
 Allow: /
 
+# DeepSeek
 User-agent: DeepSeekBot
 Allow: /
 
+# 通义千问 / 阿里
 User-agent: Qbot
 Allow: /
 
+User-agent: AliBot
+Allow: /
+
+# 文心一言 / 百度
 User-agent: Baiduspider
 Allow: /
 
+# Kimi / 月之暗面
+User-agent: KimiBot
+Allow: /
+
+# 智谱 ChatGLM
+User-agent: ZhipuBot
+Allow: /
+
+# 讯飞星火
+User-agent: XunfeiBot
+Allow: /
+
+# 小米 MiMo
+User-agent: XiaomiBot
+Allow: /
+
+# === 国际大模型 AI 爬虫 ===
+# OpenAI / ChatGPT
 User-agent: GPTBot
 Allow: /
 
+# Google Gemini
+User-agent: Google-Extended
+Allow: /
+
+# Anthropic / Claude
+User-agent: anthropic-ai
+Allow: /
+
 User-agent: ClaudeBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# You.com
+User-agent: YouBot
 Allow: /

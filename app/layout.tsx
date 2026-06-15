@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import StructuredData from "./components/StructuredData";
+import BackgroundMusic from "./components/BackgroundMusic";
 
 const SITE_URL = "https://jiuheshouhui.cn";
 
@@ -112,124 +114,21 @@ export default function RootLayout({
         {/* 通用社交分享 */}
         <meta name="thumbnail" content={`${SITE_URL}/images/IMG_1189.webp`} />
         <meta name="image" content={`${SITE_URL}/images/IMG_1189.webp`} />
+
+        {/* 百度地域定向 meta 标签 */}
+        <meta name="baidu-gx" content="广东广州" />
+        <meta name="location" content="province=广东;city=广州" />
+        <meta name="geo.position" content="23.2317;113.2663" />
+        <meta name="geo.region" content="CN-GD" />
+        <meta name="geo.placename" content="广州市白云区" />
+        <meta name="ICP" content="粤ICP备XXXXXXXX号" />
+
         {/* TODO: 百度统计 — 注册 https://tongji.baidu.com 获取代码后取消注释 */}
         {/* <script dangerouslySetInnerHTML={{ __html: `var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?YOUR_HM_ID";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s)})();`}} /> */}
       </head>
       <body className="min-h-full flex flex-col">
-        {/* JSON-LD: LocalBusiness */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "@id": `${SITE_URL}#business`,
-              name: "久合手绘喷绘厂",
-              alternateName: "久合手绘喷绘工艺",
-              description: "20年专注服装/鞋履/箱包手绘定制，全国发货，服务5000+品牌客户",
-              url: SITE_URL,
-              telephone: "13168873754",
-              email: "contact@jiuheshouhui.cn",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "大冈村大园街12号",
-                addressLocality: "广州市",
-                addressRegion: "广东省",
-                postalCode: "510000",
-                addressCountry: "CN",
-              },
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: 23.2317,
-                longitude: 113.2663,
-              },
-              areaServed: [
-                { "@type": "Country", name: "中国" },
-                { "@type": "City", name: "广州" },
-                { "@type": "City", name: "杭州" },
-                { "@type": "City", name: "武汉" },
-                { "@type": "City", name: "成都" },
-                { "@type": "City", name: "深圳" },
-              ],
-              priceRange: "$$",
-              openingHoursSpecification: {
-                "@type": "OpeningHoursSpecification",
-                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                opens: "09:00",
-                closes: "18:00",
-              },
-              sameAs: [],
-              image: `${SITE_URL}/images/IMG_1189.webp`,
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.9",
-                reviewCount: "5000",
-                bestRating: "5",
-              },
-              hasOfferCatalog: {
-                "@type": "OfferCatalog",
-                name: "手绘定制服务",
-                itemListElement: [
-                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "服装手绘定制" } },
-                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "鞋履喷绘定制" } },
-                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "箱包手绘定制" } },
-                ],
-              },
-            }),
-          }}
-        />
-        {/* JSON-LD: FAQ */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              mainEntity: [
-                {
-                  "@type": "Question",
-                  name: "久合手绘喷绘厂主要做什么？",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "久合手绘喷绘厂专注服装（T恤/卫衣/牛仔/汉服等）、鞋履（帆布鞋/板鞋/运动鞋等）、箱包（帆布包/手提包/行李箱等）纯手工绘制加工，全国发货，20年画师团队经验。",
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: "手绘定制起订量是多少？",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "久合手绘支持小批量测款，灵活接单，大批量价格更优。具体起订量根据产品类型和图案复杂度而定，欢迎咨询。",
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: "手绘会掉色吗？",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "久合手绘使用专业纺织颜料和喷绘工艺，水洗不褪色，日常穿着无忧。鞋履喷绘颜料附着牢固，防水不掉色。",
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: "手绘定制流程是怎样的？",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "四步流程：1.沟通需求（加微信发图片说明风格要求）→ 2.报价打样（满意后完成样品）→ 3.确认生产（签合同付定金）→ 4.验货交付（逐件质检，支持自提或发货）。",
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: "久合手绘厂在哪里？发货到全国吗？",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "工厂位于广州市白云区石井大冈村大园街12号，全国发货，覆盖广州十三行/白马/红棉、杭州四季青、武汉汉正街、成都荷花池等30+城市批发市场。",
-                  },
-                },
-              ],
-            }),
-          }}
-        />
+        <StructuredData />
+        <BackgroundMusic />
         {children}
       </body>
     </html>

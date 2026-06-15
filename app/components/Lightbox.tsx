@@ -87,6 +87,7 @@ export default function Lightbox({ images, isOpen, onClose, initialIndex = 0 }: 
         className="max-w-[90vw] max-h-[85vh] relative"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           key={currentIndex}
           src={images[currentIndex].src}

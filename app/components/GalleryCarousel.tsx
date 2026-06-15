@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Lightbox from './Lightbox';
 
 const images: { src: string; alt: string }[] = [
@@ -71,16 +71,53 @@ const allImages = images.map((img) => ({
 }));
 
 export default function GalleryCarousel() {
-  const [group, setGroup] = useState(0);
+  const [group, setGroup] = useState(groupCount - 1);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIdx, setLightboxIdx] = useState(0);
+  const [fadeKey, setFadeKey] = useState(0);
+  const [musicOn, setMusicOn] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // 滚动到轮播区域时自动播放音乐
+  useEffect(() => {
+    const el = containerRef.current;
+    const audio = audioRef.current;
+    if (!el || !audio) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && musicOn) {
+          audio.play().catch(() => {});
+        } else {
+          audio.pause();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [musicOn]);
+
+  const toggleMusic = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (musicOn) {
+      audio.pause();
+      setMusicOn(false);
+    } else {
+      audio.play().catch(() => {});
+      setMusicOn(true);
+    }
+  };
 
   const nextGroup = useCallback(() => {
     setGroup((prev) => (prev + 1) % groupCount);
+    setFadeKey((k) => k + 1);
   }, []);
 
   const prevGroup = useCallback(() => {
     setGroup((prev) => (prev - 1 + groupCount) % groupCount);
+    setFadeKey((k) => k + 1);
   }, []);
 
   useEffect(() => {
@@ -96,10 +133,24 @@ export default function GalleryCarousel() {
     setLightboxOpen(true);
   };
 
+  const goToGroup = (i: number) => {
+    setGroup(i);
+    setFadeKey((k) => k + 1);
+  };
+
   return (
     <>
-      <div className="w-full bg-black p-2 overflow-hidden">
-        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 cursor-pointer">
+      <audio ref={audioRef} src="/music/bgm.mp3" loop preload="auto" />
+      <div ref={containerRef} className="w-full bg-black p-2 overflow-hidden relative">
+        {/* 音乐开关 */}
+        <button
+          type="button"
+          onClick={toggleMusic}
+          className="absolute top-2 right-2 z-10 w-8 h-8 rounded-full bg-gray-800/70 border border-gray-600 flex items-center justify-center text-yellow-400 text-sm"
+        >
+          {musicOn ? '🔊' : '🔇'}
+        </button>
+        <div key={fadeKey} className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 cursor-pointer animate-fade-in">
           {current.map((img, i) => (
             <div
               key={`${group}-${i}`}
@@ -130,7 +181,7 @@ export default function GalleryCarousel() {
               key={i}
               type="button"
               aria-label={`第 ${i + 1} 组图片`}
-              onClick={() => setGroup(i)}
+              onClick={() => goToGroup(i)}
               className={`h-2 rounded-full transition-all duration-300 ${
                 i === group ? 'bg-yellow-500 w-6' : 'bg-gray-600 w-2'
               }`}
@@ -139,7 +190,7 @@ export default function GalleryCarousel() {
         </div>
 
         {/* 上一组 / 下一组 */}
-        <div className="flex justify-center gap-4 mt-4">
+        <div className="flex justify-center gap-4 mt-4 mb-20 md:mb-4">
           <button
             type="button"
             aria-label="上一组图片"

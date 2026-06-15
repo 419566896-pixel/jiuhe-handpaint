@@ -1,4 +1,5 @@
 import AnimateOnScroll from "./components/AnimateOnScroll";
+import CategoryShowcase from "./components/CategoryShowcase";
 import ContactForm from "./components/ContactForm";
 import FAQ from "./components/FAQ";
 import GalleryCarousel from "./components/GalleryCarousel";
@@ -83,51 +84,7 @@ export default function Home() {
 
       {/* Services Section */}
       <AnimateOnScroll>
-      <section id="services" className="py-12 md:py-20 bg-gray-900 border-t border-gray-800">
-        <div className="px-4 md:px-8">
-          <h2 className="text-2xl md:text-4xl font-bold text-center mb-4 text-white">三大品类全覆盖</h2>
-          <p className="text-center text-gray-400 mb-8 md:mb-16">你的创意我们来实现</p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 ">
-            {[
-              {
-                title: '服装手绘',
-                icon: '👗',
-                desc: 'T恤 · 卫衣 · 牛仔外套 · 民族服饰',
-                features: ['适配各类面料（棉/牛仔/雪纺/真丝）', '国风/潮流/复古/文艺各种风格', '可按设计稿定制或原创设计', '水洗不褪色，日常穿着无忧'],
-              },
-              {
-                title: '鞋履喷绘',
-                icon: '👟',
-                desc: '帆布鞋 · 板鞋 · 小白鞋 · 运动鞋',
-                features: ['卡通IP、油画风、国潮、涂鸦任选', '颜料附着牢固，防水不掉色', '适合测款和批量', '可来样定制，也可看图报价'],
-              },
-              {
-                title: '箱包手绘',
-                icon: '👜',
-                desc: '帆布包 · 手提包 · 背包 · 行李箱',
-                features: ['纯手工绘制，每个都是独立艺术品', '适配帆布/皮革/牛津布等材质', '可配合品牌Logo融入设计', '适合电商差异化、文创周边、品牌礼品'],
-              }
-            ].map((service) => (
-              <div key={service.title} className="bg-gray-800 border border-gray-700 rounded-2xl p-5 md:p-8 hover:border-yellow-600 transition">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-4xl">{service.icon}</span>
-                  <h3 className="text-xl font-bold text-white">{service.title}</h3>
-                </div>
-                <p className="text-gray-400 text-sm mb-6">{service.desc}</p>
-                <ul className="space-y-3">
-                  {service.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm text-gray-300">
-                      <span className="text-yellow-500 mt-0.5">✦</span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        <CategoryShowcase />
       </AnimateOnScroll>
 
       {/* Why Us Section */}
