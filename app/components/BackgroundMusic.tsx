@@ -12,6 +12,17 @@ export default function BackgroundMusic() {
     return () => clearTimeout(timer);
   }, []);
 
+  // 自动播放（浏览器策略允许时生效）
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.play().then(() => {
+      setPlaying(true);
+    }).catch(() => {
+      // 浏览器阻止自动播放，用户需手动点击按钮
+    });
+  }, []);
+
   const toggle = () => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -25,7 +36,7 @@ export default function BackgroundMusic() {
 
   return (
     <>
-      <audio ref={audioRef} src="/music/bgm.mp3" loop preload="auto" />
+      <audio ref={audioRef} src="/music/bgm.mp3" loop preload="auto" autoPlay />
 
       {/* 播放按钮 */}
       <button
