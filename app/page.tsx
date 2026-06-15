@@ -4,7 +4,6 @@ import ContactForm from "./components/ContactForm";
 import FAQ from "./components/FAQ";
 import GalleryCarousel from "./components/GalleryCarousel";
 import Navbar from "./components/Navbar";
-import ScrollToTop from "./components/ScrollToTop";
 import ShareButtons from "./components/ShareButtons";
 export default function Home() {
   return (
@@ -276,7 +275,6 @@ export default function Home() {
         </div>
       </footer>
 
-      <ScrollToTop />
     </div>
   );
 }
